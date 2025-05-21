@@ -1,0 +1,258 @@
+{
+  "SPN:100 FMI:1": {
+    "description": "Presión de Aceite del Motor: Muy baja (Severidad 1). Indica que la presión del aceite ha caído por debajo del umbral normal, lo cual es crítico para la vida útil del motor y requiere atención inmediata.",
+    "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+1"
+  },
+  "SPN:100 FMI:3": {
+    "description": "Presión de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede indicar un problema con el sensor o el circuito.",
+    "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+3"
+  },
+  "SPN:100 FMI:4": {
+    "description": "Presión de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede indicar un problema con el sensor o el circuito.",
+    "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+4"
+  },
+  "SPN:110 FMI:0": {
+    "description": "Temperatura de Refrigerante del Motor: Datos válidos pero por encima del rango de operación normal - más grave. Indica sobrecalentamiento del motor, riesgo de daño grave.",
+    "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+0"
+  },
+  "SPN:110 FMI:3": {
+    "description": "Temperatura de Refrigerante del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede ser un sensor de temperatura defectuoso o un problema de cableado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+3"
+  },
+  "SPN:523318 FMI:7": {
+    "description": "Falla del Sensor de Partículas (PM Sensor): Mal funcionamiento mecánico o fuera de calibración. Indica que el sensor de partículas que mide la concentración de hollín en el escape está defectuoso, lo que puede afectar el sistema de post-tratamiento de emisiones.",
+    "link": "https://www.dtcdecode.com/SPN/523318-FMI-7"
+  },
+  "SPN:111 FMI:3": {
+    "description": "Nivel de Refrigerante del Motor: Voltaje Anormalmente Alto o Cortocircuito a Fuente Alta. Esto puede indicar un problema eléctrico con el sensor de nivel de refrigerante, una lectura errónea o un problema real con el nivel de refrigerante.",
+    "link": "https://www.dtcdecode.com/SPN/111-FMI-3"
+  },
+  "SPN:1209 FMI:4": {
+    "description": "Presión del Filtro de Partículas Diésel (DPF): Voltaje Anormalmente Bajo o Cortocircuito a Fuente Baja. Indica un problema con el sensor de presión del DPF, que podría estar defectuoso o tener un problema de cableado, afectando la monitorización del filtro.",
+    "link": "https://www.dtcdecode.com/SPN/1209-FMI-4"
+  },
+  "SPN:110 FMI:4": {
+    "description": "Temperatura de Refrigerante del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede ser un sensor de temperatura defectuoso o un problema de cableado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+4"
+  },
+  "SPN:111 FMI:1": {
+    "description": "Nivel de Refrigerante: Muy bajo. Indica que el nivel de refrigerante ha caído significativamente, lo que puede llevar a un sobrecalentamiento del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+111+FMI+1"
+  },
+  "SPN:157 FMI:3": {
+    "description": "Presión de Riel de Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor de presión del riel o su circuito.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+3"
+  },
+  "SPN:157 FMI:4": {
+    "description": "Presión de Riel de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor de presión del riel o su circuito.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+4"
+  },
+  "SPN:157 FMI:10": {
+    "description": "Presión de Riel de Combustible: Velocidad de cambio anormal. La presión del riel no responde como se espera a los cambios de demanda.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+10"
+  },
+  "SPN:174 FMI:0": {
+    "description": "Temperatura del Combustible: Datos válidos pero por encima del rango de operación normal - más grave. El combustible está demasiado caliente, afectando el rendimiento o la seguridad.",
+    "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+0"
+  },
+  "SPN:174 FMI:3": {
+    "description": "Temperatura del Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema con el sensor de temperatura del combustible.",
+    "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+3"
+  },
+  "SPN:174 FMI:4": {
+    "description": "Temperatura del Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema con el sensor de temperatura del combustible.",
+    "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+4"
+  },
+  "SPN:247 FMI:14": {
+    "description": "Falla del Sensor de Presión de Combustible: Calibración incorrecta o falta de calibración. Sugiere que el sensor de presión de combustible está mal calibrado o necesita ser calibrado, lo que puede resultar en lecturas inexactas.",
+    "link": "https://www.dtcdecode.com/SPN/247-FMI-14"
+  },
+  "SPN:190 FMI:0": {
+    "description": "Velocidad del Motor (RPM): Datos válidos pero por encima del rango de operación normal - más grave. El motor está sobre-revolucionado, riesgo de daño.",
+    "link": "https://www.google.com/search?q=J1939+SPN+190+FMI+0"
+  },
+  "SPN:190 FMI:2": {
+    "description": "Velocidad del Motor (RPM): Datos erráticos, intermitentes o incorrectos. Puede indicar un sensor de RPM defectuoso, interferencia, o problemas en el cigüeñal/árbol de levas.",
+    "link": "https://www.google.com/search?q=J1939+SPN+190+FMI+2"
+  },
+  "SPN:2791 FMI:13": {
+    "description": "Falla de EGR (Recirculación de Gases de Escape): Falla de la válvula de recirculación de gases de escape, fuera de calibración. Esto puede afectar las emisiones, el rendimiento y la eficiencia del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+2791+FMI+13+EGR"
+  },
+  "SPN:3241 FMI:4": {
+    "description": "Sensor de Nivel de Urea (DEF): Voltaje por debajo de lo normal o cortocircuito a bajo. Problema con el sensor de nivel de DEF o su cableado, que puede afectar el sistema de post-tratamiento.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3241+FMI+4"
+  },
+  "SPN:3251 FMI:0": {
+    "description": "Temperatura del Refrigerante de Post-tratamiento: Datos válidos pero por encima del rango de operación normal - más grave. Sobrecalentamiento en el sistema de emisiones, lo que puede causar daños.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+0"
+  },
+  "SPN:3251 FMI:3": {
+    "description": "Temperatura del Refrigerante de Post-tratamiento: Voltaje por encima de lo normal o cortocircuito a alto. Puede ser un sensor defectuoso o cableado en el sistema de emisiones.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+3"
+  },
+  "SPN:3251 FMI:4": {
+    "description": "Temperatura del Refrigerante de Post-tratamiento: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede ser un sensor defectuoso o cableado en el sistema de emisiones.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+4"
+  },
+  "SPN:3363 FMI:0": {
+    "description": "Presión del Filtro de Partículas Diésel (DPF): Datos válidos pero por encima del rango de operación normal - más grave. Indica un DPF obstruido o un problema de regeneración, lo que restringe el escape.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3363+FMI+0"
+  },
+  "SPN:3363 FMI:1": {
+    "description": "Presión del Filtro de Partículas Diésel (DPF): Datos válidos pero por debajo del rango de operación normal - más grave. Puede indicar una fuga en el sistema de escape o un DPF dañado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3363+FMI+1"
+  },
+  "SPN:3597 FMI:31": {
+    "description": "Calibración del Sistema de Dosificación de Reductor (DEF): Condición de falla presente. Indica que el sistema de dosificación de DEF tiene un problema de calibración o funcionalidad, afectando el control de emisiones.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3597+FMI+31"
+  },
+  "SPN:3719 FMI:15": {
+    "description": "DPF Fallas Múltiples: Datos válidos pero por debajo del rango de operación normal - el nivel más bajo. Indica un problema grave con el sistema de post-tratamiento o DPF.",
+    "link": "https://www.google.com/search?q=J1939+SPN+3719+FMI+15"
+  },
+  "SPN:4077 FMI:3": {
+    "description": "Presión del Filtro de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor o circuito de presión del filtro de aceite.",
+    "link": "https://www.google.com/search?q=J1939+SPN+4077+FMI+3"
+  },
+  "SPN:4077 FMI:4": {
+    "description": "Presión del Filtro de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor o circuito de presión del filtro de aceite.",
+    "link": "https://www.google.com/search?q=J1939+SPN+4077+FMI+4"
+  },
+  "SPN:4765 FMI:0": {
+    "description": "Sensor de Nox (Óxidos de Nitrógeno) Salida de Escape: Datos válidos pero por encima del rango de operación normal - más grave. Indica altos niveles de Nox, posiblemente por un problema en el sistema SCR o el motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+4765+FMI+0"
+  },
+  "SPN:4765 FMI:1": {
+    "description": "Sensor de Nox (Óxidos de Nitrógeno) Salida de Escape: Datos válidos pero por debajo del rango de operación normal - más grave.",
+    "link": "https://www.google.com/search?q=J1939+SPN+4765+FMI+1"
+  },
+  "SPN:520306 FMI:4": {
+    "description": "Sensor de Presión de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Indica un problema con el sensor de presión de combustible que puede afectar el rendimiento del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520306+FMI+4"
+  },
+  "SPN:523530 FMI:31": {
+    "description": "Falla Genérica de Motor: Condición de falla presente. Este es un código genérico que indica que el módulo de control electrónico (ECM) ha detectado un problema. Requiere un diagnóstico más profundo para identificar la causa raíz.",
+    "link": "https://www.google.com/search?q=J1939+SPN+523530+FMI+31"
+  },
+  "SPN:523531 FMI:31": {
+    "description": "Sistema de Post-tratamiento de Escape: Condición de falla presente. Problema general en el sistema de emisiones, como SCR, DPF, o catalizador.",
+    "link": "https://www.google.com/search?q=J1939+SPN+523531+FMI+31"
+  },
+  "SPN:523543 FMI:31": {
+    "description": "Sistema de Monitoreo de Reducción Catalítica Selectiva (SCR): Condición de falla presente. Problema en el sistema SCR que controla las emisiones de NOx.",
+    "link": "https://www.google.com/search?q=J1939+SPN+523543+FMI+31"
+  },
+  "SPN:523555 FMI:31": {
+    "description": "Sistema de Dosificación de Reductor (DEF): Condición de falla presente. Problema en el sistema de inyección de urea (DEF) para el control de emisiones.",
+    "link": "https://www.google.com/search?q=J1939+SPN+523555+FMI+31"
+  },
+  "SPN:625 FMI:12": {
+    "description": "Controladora de la Red de Comunicación de la Transmisión: Dispositivo o componente defectuoso. Problema en el módulo de control de la transmisión o su comunicación en el bus de datos.",
+    "link": "https://www.google.com/search?q=J1939+SPN+625+FMI+12"
+  },
+  "SPN:94 FMI:3": {
+    "description": "Presión del Suministro de Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor de presión de combustible o su cableado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+94+FMI+3"
+  },
+  "SPN:94 FMI:4": {
+    "description": "Presión del Suministro de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor de presión de combustible o su cableado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+94+FMI+4"
+  },
+  "SPN:97 FMI:0": {
+    "description": "Indicador de Agua en el Combustible: Datos válidos pero por encima del rango de operación normal - más grave. Presencia excesiva de agua en el combustible, riesgo de daño a inyectores.",
+    "link": "https://www.google.com/search?q=J1939+SPN+97+FMI+0"
+  },
+  "SPN:97 FMI:1": {
+    "description": "Indicador de Agua en el Combustible: Datos válidos pero por debajo del rango de operación normal - más grave. Posiblemente un sensor defectuoso o cableado.",
+    "link": "https://www.google.com/search?q=J1939+SPN+97+FMI+1"
+  },
+  "SPN:520215 FMI:3": {
+    "description": "Sensor de Nivel de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede resultar en una lectura incorrecta del nivel de aceite.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+3"
+  },
+  "SPN:520215 FMI:4": {
+    "description": "Sensor de Nivel de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede resultar en una lectura incorrecta del nivel de aceite.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+4"
+  },
+  "SPN:520215 FMI:10": {
+    "description": "Sensor de Nivel de Aceite del Motor: Velocidad de cambio anormal. El nivel de aceite no cambia como se espera o cambia erráticamente.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+10"
+  },
+  "SPN:520216 FMI:0": {
+    "description": "Presión de Aceite de Transmisión: Datos válidos pero por encima del rango de operación normal - más grave. Presión excesiva de aceite en la transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520216+FMI+0"
+  },
+  "SPN:520216 FMI:1": {
+    "description": "Presión de Aceite de Transmisión: Datos válidos pero por debajo del rango de operación normal - más grave. Presión insuficiente de aceite en la transmisión, riesgo de daño.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520216+FMI+1"
+  },
+  "SPN:520217 FMI:0": {
+    "description": "Temperatura de Aceite de Transmisión: Datos válidos pero por encima del rango de operación normal - más grave. Sobrecalentamiento del aceite de transmisión, riesgo de daño a la transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520217+FMI+0"
+  },
+  "SPN:520217 FMI:3": {
+    "description": "Temperatura de Aceite de Transmisión: Voltaje por encima de lo normal o cortocircuito a alto. Problema con el sensor de temperatura del aceite de transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520217+FMI+3"
+  },
+  "SPN:520217 FMI:4": {
+    "description": "Temperatura de Aceite de Transmisión: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema con el sensor de temperatura del aceite de transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520217+FMI+4"
+  },
+  "SPN:520218 FMI:31": {
+    "description": "Falla de Transmisión: Condición de falla presente. Problema genérico en la transmisión que requiere diagnóstico específico.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520218+FMI+31"
+  },
+  "SPN:520219 FMI:31": {
+    "description": "Falla de Sistema de Frenos: Condición de falla presente. Problema en el sistema de frenos (ABS, EBS, etc.) que requiere atención inmediata.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520219+FMI+31"
+  },
+  "SPN:520220 FMI:31": {
+    "description": "Falla del Sistema de Dirección: Condición de falla presente. Problema en el sistema de dirección asistida o electrónica.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520220+FMI+31"
+  },
+  "SPN:520221 FMI:31": {
+    "description": "Falla de Suspensión: Condición de falla presente. Problema en el sistema de suspensión neumática o electrónica.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520221+FMI+31"
+  },
+  "SPN:520222 FMI:31": {
+    "description": "Falla del Sistema de Luces: Condición de falla presente. Problema en el sistema de iluminación exterior del vehículo.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520222+FMI+31"
+  },
+  "SPN:520223 FMI:31": {
+    "description": "Falla de Sistema de Climatización (HVAC): Condición de falla presente. Problema en el aire acondicionado o calefacción de la cabina.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520223+FMI+31"
+  },
+  "SPN:520224 FMI:31": {
+    "description": "Falla de Sistema de Seguridad: Condición de falla presente. Problema con el sistema de alarma, inmovilizador o bolsas de aire (si aplica).",
+    "link": "https://www.google.com/search?q=J1939+SPN+520224+FMI+31"
+  },
+  "SPN:520225 FMI:31": {
+    "description": "Falla del Tren de Potencia: Condición de falla presente. Problema genérico en la cadena cinemática (motor, transmisión, ejes).",
+    "link": "https://www.google.com/search?q=J1939+SPN+520225+FMI+31"
+  },
+  "SPN:520226 FMI:31": {
+    "description": "Falla del Sistema de Post-tratamiento de Escape: Condición de falla presente. Problema con los componentes del sistema de emisiones (DPF, SCR, sensores de NOx, etc.).",
+    "link": "https://www.google.com/search?q=J1939+SPN+520226+FMI+31"
+  },
+  "SPN:520227 FMI:31": {
+    "description": "Falla del Sistema Eléctrico: Condición de falla presente. Problema en el sistema de carga, batería, alternador o cableado general.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520227+FMI+31"
+  },
+  "SPN:520228 FMI:31": {
+    "description": "Falla del Sistema de Control de Crucero: Condición de falla presente. Problema en la funcionalidad del control de crucero.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520228+FMI+31"
+  },
+  "SPN:520229 FMI:31": {
+    "description": "Falla del Sistema de Gestión del Motor: Condición de falla presente. Problema general en el ECM o sus funciones de control.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520229+FMI+31"
+  },
+  "SPN:520230 FMI:31": {
+    "description": "Falla del Sistema de Combustible: Condición de falla presente. Problema en el sistema de suministro de combustible (bomba, inyectores, filtros, etc.).",
+    "link": "https://www.google.com/search?q=J1939+SPN+520230+FMI+31"
+  },
+  "SPN:520231 FMI:31": {
+    "description": "Falla del Sistema de Admisión de Aire: Condición de falla presente. Problema con el turbocargador, intercooler, filtro de aire o sensores relacionados.",
+    "link": "https://www.google.com/search?q=J1939+SPN+520231+FMI+31"
+  }
+}
