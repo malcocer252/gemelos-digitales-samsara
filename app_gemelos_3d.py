@@ -8,7 +8,7 @@ import pandas as pd
 import base64
 from streamlit.components.v1 import html
 import folium 
-from streamlit_folium import st_folium # Importar st_folium directamente
+from streamlit_folium import st_folium
 
 # --- CONFIGURACIÓN DE PÁGINA (¡DEBE SER LO PRIMERO!) ---
 st.set_page_config(layout="wide", page_title="Gemelos Digitales de Flota")
@@ -107,7 +107,6 @@ def fetch_samsara_data_multiple_vehicles(vehicle_ids_to_fetch):
     return all_vehicle_details_map, all_vehicle_locations, all_vehicle_stats, all_vehicle_maintenance_data
 
 
-## CAMBIOS AQUI: Función para obtener y procesar datos de UN SOLO vehículo, sin usar caché.
 def fetch_and_process_single_vehicle_data(vehicle_id):
     st.info(f"Actualizando datos para el vehículo: {vehicle_id}...")
     
@@ -116,10 +115,8 @@ def fetch_and_process_single_vehicle_data(vehicle_id):
         st.error(f"No se pudieron obtener detalles para el vehículo ID: {vehicle_id}.")
         return None
 
-    # Obtener ubicación individual (la función get_vehicle_locations ya permite un solo ID)
     vehicle_locations = get_vehicle_locations([vehicle_id]) 
 
-    # Obtener estadísticas individuales
     all_desired_stat_types = [
         'engineCoolantTemperatureMilliC',
         'ambientAirTemperatureMilliC',
@@ -134,13 +131,11 @@ def fetch_and_process_single_vehicle_data(vehicle_id):
         if stats_data_fetched_batch:
             combined_stats.update(stats_data_fetched_batch)
     
-    vehicle_stats_for_processing = {vehicle_id: combined_stats} # Formato esperado por process_vehicle_data
+    vehicle_stats_for_processing = {vehicle_id: combined_stats} 
 
-    # Obtener datos de mantenimiento individuales
     vehicle_maintenance_data = get_vehicle_maintenance_data(vehicle_id)
-    maintenance_data_for_processing = {vehicle_id: vehicle_maintenance_data} # Formato esperado
+    maintenance_data_for_processing = {vehicle_id: vehicle_maintenance_data} 
 
-    # Procesar y devolver el gemelo digital actualizado
     gemelo_actualizado = process_vehicle_data(
         vehicle_details, 
         vehicle_locations, 
@@ -307,8 +302,6 @@ def process_vehicle_data(vehicle_details, vehicle_locations, vehicle_stats, vehi
         'alert_color': 'green'
     }
 
-    # Asegúrate de que vehicle_stats y vehicle_maintenance_data sean diccionarios antes de intentar .get()
-    # para evitar errores si las funciones de fetching devuelven None o un formato inesperado
     stats_data = vehicle_stats.get(gemelo_digital['vehicle_id'], {}) if isinstance(vehicle_stats, dict) else {}
     maintenance_data = vehicle_maintenance_data.get(gemelo_digital['vehicle_id'], {}) if isinstance(vehicle_maintenance_data, dict) else {}
 
@@ -414,19 +407,22 @@ def process_vehicle_data(vehicle_details, vehicle_locations, vehicle_stats, vehi
 
 # --- Función para mostrar el visor 3D ---
 def display_gltf_viewer(model_path, height=400):
+    # Crear un placeholder para el modelo 3D
+    model_placeholder = st.empty()
+
     if not os.path.exists(model_path):
-        st.error(f"Error: El archivo del modelo 3D '{model_path}' no se encontró en la ruta: {os.path.abspath(model_path)}")
-        st.warning("Asegúrate de que el archivo del modelo 3D (ej. 'truck.glb') esté en la misma carpeta que este script.")
-        st.warning(f"**¡IMPORTANTÍSIMO!** Si tu archivo es '.obj' (como '{os.path.basename(model_path).replace('.glb', '.obj')}'), necesitas **CONVERTIRLO** a '.glb' o '.gltf' para que funcione con el visor 3D en Streamlit.")
-        st.warning("Puedes usar herramientas online como: https://www.greentoken.de/onlineconv/ o https://anyconv.com/obj-to-glb-converter/")
-        st.warning("Después de la conversión, asegúrate de **RENOMBRAR** el archivo resultante a `truck.glb` y que sea el único `truck.glb` en la carpeta.")
+        model_placeholder.error(f"Error: El archivo del modelo 3D '{model_path}' no se encontró en la ruta: {os.path.abspath(model_path)}")
+        model_placeholder.warning("Asegúrate de que el archivo del modelo 3D (ej. 'truck.glb') esté en la misma carpeta que este script.")
+        model_placeholder.warning(f"**¡IMPORTANTÍSIMO!** Si tu archivo es '.obj' (como '{os.path.basename(model_path).replace('.glb', '.obj')}'), necesitas **CONVERTIRLO** a '.glb' o '.gltf' para que funcione con el visor 3D en Streamlit.")
+        model_placeholder.warning("Puedes usar herramientas online como: https://www.greentoken.de/onlineconv/ o https://anyconv.com/obj-to-glb-converter/")
+        model_placeholder.warning("Después de la conversión, asegúrate de **RENOMBRAR** el archivo resultante a `truck.glb` y que sea el único `truck.glb` en la carpeta.")
         return
 
     try:
         if not model_path.lower().endswith(('.glb', '.gltf')):
-            st.error(f"Error: El archivo '{os.path.basename(model_path)}' no es un modelo GLB o GLTF.")
-            st.warning("El visor 3D en Streamlit solo soporta modelos en formato '.glb' o '.gltf'.")
-            st.warning("Por favor, convierte tu modelo 3D a uno de estos formatos y renombra el archivo a 'truck.glb'.")
+            model_placeholder.error(f"Error: El archivo '{os.path.basename(model_path)}' no es un modelo GLB o GLTF.")
+            model_placeholder.warning("El visor 3D en Streamlit solo soporta modelos en formato '.glb' o '.gltf'.")
+            model_placeholder.warning("Por favor, convierte tu modelo 3D a uno de estos formatos y renombra el archivo a 'truck.glb'.")
             return
 
         with open(model_path, "rb") as f:
@@ -455,72 +451,14 @@ def display_gltf_viewer(model_path, height=400):
           ar-modes="webxr scene-viewer quick-look"
         ></model-viewer>
         """
-        html(html_code, height=height, width=None, scrolling=False)
+        # Renderizar el HTML en el placeholder
+        model_placeholder.html(html_code, height=height, width=None, scrolling=False)
     except Exception as e:
-        st.error(f"Error al cargar o mostrar el modelo 3D: {e}")
-        st.info("Asegúrate de que el archivo GLB no esté corrupto y que el nombre del archivo en el código sea exactamente igual al del archivo en tu disco.")
-
-# --- Funciones para Mapas ---
-def display_fleet_map(all_gemelos, map_height=500):
-    # Filtrar camiones con latitud y longitud válidas
-    mappable_vehicles = [
-        g for g in all_gemelos.values()
-        if isinstance(g.get('latitude'), (float, int)) and isinstance(g.get('longitude'), (float, int))
-        and g['latitude'] != 'N/A' and g['longitude'] != 'N/A'
-    ]
-
-    if not mappable_vehicles:
-        st.warning("No hay datos de ubicación válidos para mostrar en el mapa de la flota.")
-        return
-
-    # Calcular el centro del mapa (promedio de latitudes y longitudes)
-    # Solo calcular si hay vehículos mapeables
-    if mappable_vehicles:
-        avg_lat = sum(g['latitude'] for g in mappable_vehicles) / len(mappable_vehicles)
-        avg_lon = sum(g['longitude'] for g in mappable_vehicles) / len(mappable_vehicles)
-        m = folium.Map(location=[avg_lat, avg_lon], zoom_start=6)
-    else: # Si no hay vehículos mapeables, usa un centro predeterminado (ej. centro de México)
-        m = folium.Map(location=[23.6345, -102.5528], zoom_start=4) # Centro de México
-        st.warning("No hay datos de ubicación válidos para calcular el centro de la flota. Mostrando un mapa centrado en México.")
+        model_placeholder.error(f"Error al cargar o mostrar el modelo 3D: {e}")
+        model_placeholder.info("Asegúrate de que el archivo GLB no esté corrupto y que el nombre del archivo en el código sea exactamente igual al del archivo en tu disco.")
 
 
-    # Añadir el TileLayer explícitamente para OpenStreetMap con atribución
-    folium.TileLayer(
-        tiles='OpenStreetMap',
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    ).add_to(m)
-
-    for gemelo in mappable_vehicles:
-        lat = gemelo['latitude']
-        lon = gemelo['longitude']
-        vehicle_name = gemelo['vehicle_name']
-        alert_color = gemelo['alert_color']
-        status_alert = gemelo['status_alert']
-        current_address = gemelo['current_address']
-        speed = gemelo['speed_mph']
-        
-        # Crear el texto del popup
-        popup_html = f"""
-        <b>{vehicle_name}</b><br>
-        Estado: <span style='color:{alert_color}; font-weight:bold;'>{status_alert}</span><br>
-        Dirección: {current_address}<br>
-        Velocidad: {speed} MPH<br>
-        Lat/Lon: {lat:.4f}, {lon:.4f}
-        """
-
-        folium.Marker(
-            location=[lat, lon],
-            popup=folium.Popup(popup_html, max_width=300),
-            tooltip=vehicle_name, # Texto que aparece al pasar el ratón
-            icon=folium.Icon(color=alert_color, icon="truck", prefix="fa") # Icono de camión
-        ).add_to(m)
-    
-    st.markdown("### 🗺️ Mapa de la Flota (Vista General)")
-    
-    # Añadir el mapa a Streamlit
-    st_folium(m, height=map_height, width="100%", key="fleet_map")
-
-
+# --- Función para el mapa individual (el de la flota completa se elimina) ---
 def display_single_vehicle_map(selected_vehicle_data, map_height=300):
     lat = selected_vehicle_data.get('latitude')
     lon = selected_vehicle_data.get('longitude')
@@ -555,7 +493,9 @@ def display_single_vehicle_map(selected_vehicle_data, map_height=300):
         ).add_to(m)
         
         st.markdown(f"#### 📍 Ubicación de {vehicle_name}")
-        st_folium(m, height=map_height, width="100%", key=f"map_{selected_vehicle_data['vehicle_id']}")
+        # Usamos un key que cambia solo si el vehicle_id cambia, o una marca de tiempo
+        # Esto es crucial para forzar el re-renderizado en algunos casos
+        st_folium(m, height=map_height, width="100%", key=f"map_{selected_vehicle_data['vehicle_id']}_{st.session_state.get('last_map_update_time', '')}")
     else:
         st.warning(f"No hay datos de ubicación válidos para {vehicle_name}. No se puede mostrar el mapa.")
 
@@ -566,12 +506,19 @@ if 'all_gemelos_digitales' not in st.session_state:
     st.session_state.all_gemelos_digitales = {}
 if 'df_fleet' not in st.session_state:
     st.session_state.df_fleet = pd.DataFrame()
+if 'selected_vehicle_data' not in st.session_state:
+    st.session_state.selected_vehicle_data = None
+if 'selected_vehicle_name_display' not in st.session_state:
+    st.session_state.selected_vehicle_name_display = ""
+# Nueva variable para forzar actualización del mapa individual
+if 'last_map_update_time' not in st.session_state:
+    st.session_state.last_map_update_time = datetime.now().isoformat()
 
 
 st.title("🚚 Gemelos Digitales de tu Flota (Samsara) con 3D y Geoposicionamiento")
 
-# Botón para actualizar la flota completa
-if st.button("Actualizar Datos de Toda la Flota"):
+# Botón para actualizar la flota completa (ahora solo actualiza los datos, no el mapa general)
+if st.button("Actualizar Datos de Toda la Flota", key="full_fleet_update_btn"):
     st.cache_data.clear() # Limpia la caché para obtener datos frescos de TODA la flota
     with st.spinner("Cargando datos de Samsara para toda la flota..."):
         vehicle_details_map, vehicle_locations, vehicle_stats, vehicle_maintenance_data = fetch_samsara_data_multiple_vehicles(HARDCODED_VEHICLE_IDS)
@@ -586,8 +533,19 @@ if st.button("Actualizar Datos de Toda la Flota"):
     
     st.session_state.all_gemelos_digitales = new_all_gemelos
     st.session_state.df_fleet = pd.DataFrame(list(st.session_state.all_gemelos_digitales.values()))
+    
+    if st.session_state.all_gemelos_digitales:
+        first_vehicle_id = list(st.session_state.all_gemelos_digitales.keys())[0]
+        st.session_state.selected_vehicle_data = st.session_state.all_gemelos_digitales[first_vehicle_id]
+        st.session_state.selected_vehicle_name_display = st.session_state.selected_vehicle_data.get('vehicle_name', first_vehicle_id)
+    else:
+        st.session_state.selected_vehicle_data = None
+        st.session_state.selected_vehicle_name_display = ""
+
+    st.session_state.last_map_update_time = datetime.now().isoformat() # Actualizar timestamp para el mapa individual
     st.success("Datos de toda la flota actualizados.")
-    st.rerun() # Fuerza una recarga para mostrar los datos actualizados
+    st.rerun() 
+
 
 # Carga inicial o recarga si no hay datos en el estado
 if not st.session_state.all_gemelos_digitales:
@@ -598,10 +556,19 @@ if not st.session_state.all_gemelos_digitales:
         for vehicle_id, details in vehicle_details_map.items():
             gemelo = process_vehicle_data(details, vehicle_locations, vehicle_stats, vehicle_maintenance_data)
             st.session_state.all_gemelos_digitales[vehicle_id] = gemelo
+        
+        # Establecer el primer vehículo como seleccionado por defecto al inicio
+        if st.session_state.all_gemelos_digitales:
+            first_vehicle_id = list(st.session_state.all_gemelos_digitales.keys())[0]
+            st.session_state.selected_vehicle_data = st.session_state.all_gemelos_digitales[first_vehicle_id]
+            st.session_state.selected_vehicle_name_display = st.session_state.selected_vehicle_data.get('vehicle_name', first_vehicle_id)
     else:
         st.warning("No se pudieron cargar datos iniciales de vehículos para la flota. Asegúrate de que los IDs de vehículos hardcodeados sean válidos y estén activos y que tu token de API tenga los permisos correctos.")
+        st.session_state.selected_vehicle_data = None
+        st.session_state.selected_vehicle_name_display = ""
     
     st.session_state.df_fleet = pd.DataFrame(list(st.session_state.all_gemelos_digitales.values()))
+    st.session_state.last_map_update_time = datetime.now().isoformat() # Actualizar timestamp para el mapa individual
 
 
 st.subheader("Resumen de la Flota")
@@ -616,31 +583,51 @@ if not st.session_state.df_fleet.empty:
 else:
     st.warning("No hay datos de vehículos disponibles para mostrar en el resumen de la flota.")
 
-# --- Mapa de la flota completa ---
-display_fleet_map(st.session_state.all_gemelos_digitales)
+# *** LÍNEA ELIMINADA: display_fleet_map(st.session_state.all_gemelos_digitales) ***
+# Si quieres mantener el mapa general pero resolver el espacio, podríamos hacer más CSS o ajustes.
+# Pero dado que no lo necesitas, lo mejor es eliminar la llamada a la función por completo.
 
-st.markdown("---")
+st.markdown("---") # Esto actuará como un separador más visible
 
 st.subheader("Detalle del Camión y Visualización 3D")
-if not st.session_state.df_fleet.empty:
+# Asegurarse de que haya al menos un vehículo seleccionado para mostrar detalles
+if st.session_state.all_gemelos_digitales and st.session_state.selected_vehicle_data:
     vehicle_names = [v.get('vehicle_name', v.get('vehicle_id')) for v in st.session_state.all_gemelos_digitales.values()]
     
-    # Usar un key específico para el selectbox para evitar problemas de estado al actualizar
-    selected_vehicle_name = st.selectbox("Selecciona un vehículo para ver detalles:", vehicle_names, key="vehicle_selector")
+    default_index = 0
+    if st.session_state.selected_vehicle_name_display in vehicle_names:
+        try:
+            default_index = vehicle_names.index(st.session_state.selected_vehicle_name_display)
+        except ValueError:
+            # Fallback por si el nombre guardado no está en la lista actual
+            default_index = 0
 
-    selected_vehicle_data = None
-    selected_vehicle_id = None # Para guardar el ID del vehículo seleccionado
-    for gemelo_id, gemelo_data in st.session_state.all_gemelos_digitales.items():
-        if gemelo_data.get('vehicle_name', gemelo_data.get('vehicle_id')) == selected_vehicle_name:
-            selected_vehicle_data = gemelo_data
-            selected_vehicle_id = gemelo_id # Guardar el ID
-            break
+    selected_vehicle_name_from_select = st.selectbox(
+        "Selecciona un vehículo para ver detalles:", 
+        vehicle_names, 
+        index=default_index, 
+        key="vehicle_selector"
+    )
+
+    # Solo actualizar si la selección cambió realmente
+    if selected_vehicle_name_from_select != st.session_state.selected_vehicle_name_display:
+        st.session_state.selected_vehicle_name_display = selected_vehicle_name_from_select
+        for gemelo_id, gemelo_data in st.session_state.all_gemelos_digitales.items():
+            if gemelo_data.get('vehicle_name', gemelo_data.get('vehicle_id')) == selected_vehicle_name_from_select:
+                st.session_state.selected_vehicle_data = gemelo_data
+                st.session_state.last_map_update_time = datetime.now().isoformat() # Forzar actualización del mapa individual
+                break
+        st.rerun() 
+
+    selected_vehicle_data = st.session_state.selected_vehicle_data
+    selected_vehicle_id = selected_vehicle_data.get('vehicle_id') if selected_vehicle_data else None
+
 
     if selected_vehicle_data:
         col1, col2 = st.columns([1, 2])
 
         with col1:
-            st.write(f"### Gemelo Digital de {selected_vehicle_name}")
+            st.write(f"### Gemelo Digital de {selected_vehicle_data.get('vehicle_name', 'N/A')}")
             st.write(f"**Estado:** <span style='color:{selected_vehicle_data.get('alert_color', 'gray')}; font-weight:bold;'>{selected_vehicle_data.get('status_alert', 'N/A')}</span>", unsafe_allow_html=True)
             st.write(f"**Última Sincronización:** {selected_vehicle_data.get('last_data_sync', 'N/A')}")
             st.write(f"**Marca:** {selected_vehicle_data.get('make', 'N/A')}")
@@ -655,37 +642,34 @@ if not st.session_state.df_fleet.empty:
             st.write(f"🔄 **RPM Motor:** {selected_vehicle_data.get('engine_rpm', 'N/A')}")
             st.write(f"⏱️ **Horas de Motor:** {selected_vehicle_data.get('engine_hours', 'N/A')} hrs")
 
-            ## CAMBIOS AQUI: Botón de actualización para el vehículo específico
-            if st.button(f"Actualizar Datos de {selected_vehicle_name}", key=f"update_button_{selected_vehicle_id}"):
+            if st.button(f"Actualizar Datos de {selected_vehicle_data.get('vehicle_name', 'esta unidad')}", key=f"update_button_{selected_vehicle_id}"):
                 updated_gemelo = fetch_and_process_single_vehicle_data(selected_vehicle_id)
                 if updated_gemelo:
-                    # Actualizar el estado de sesión con los datos del vehículo actualizado
                     st.session_state.all_gemelos_digitales[selected_vehicle_id] = updated_gemelo
-                    # También actualizar el DataFrame de la flota si es necesario (aunque no se use directamente para mostrar el detalle)
                     st.session_state.df_fleet = pd.DataFrame(list(st.session_state.all_gemelos_digitales.values()))
-                    st.rerun() # Fuerza una recarga para mostrar los datos actualizados
+                    st.session_state.selected_vehicle_data = updated_gemelo # Asegurar que el estado del vehículo seleccionado se actualiza
+                    st.session_state.last_map_update_time = datetime.now().isoformat() # Forzar actualización del mapa individual
+                    st.rerun() 
 
 
         with col2:
-            # Primero el modelo 3D
-            st.write(f"### Visualización 3D de {selected_vehicle_name}")
+            st.write(f"### Visualización 3D de {selected_vehicle_data.get('vehicle_name', 'N/A')}")
+            # La altura del modelo 3D podría influir en el espacio debajo
             display_gltf_viewer(TRUCK_MODEL_PATH, height=280) 
             st.markdown(f"**Estado del Modelo 3D:** <span style='color:{selected_vehicle_data.get('alert_color', 'gray')}; font-weight:bold;'>{selected_vehicle_data.get('status_alert', 'N/A')}</span>", unsafe_allow_html=True)
             
-            # Luego el mapa individual
+            # El mapa individual también tiene una altura fija, lo que ayuda a que Streamlit lo posicione
             display_single_vehicle_map(selected_vehicle_data, map_height=280) 
 
-        # Nueva sección para DTCs y luces de Check Engine, ocupando el ancho completo
-        st.markdown("---") # Una línea para separar visualmente
+        st.markdown("---") 
 
         st.subheader("Códigos de Falla y Luces de Advertencia")
 
-        # DTCs
         dtcs = selected_vehicle_data.get('diagnostic_trouble_codes')
         if dtcs and isinstance(dtcs, list) and len(dtcs) > 0:
             st.warning(f"🚨 **DTCs Activos:**")
             
-            num_columns_dtcs = 4 # Ahora 4 columnas para DTCs
+            num_columns_dtcs = 4 
             cols_dtc = st.columns(num_columns_dtcs)
             col_idx_dtc = 0
 
@@ -713,7 +697,6 @@ if not st.session_state.df_fleet.empty:
         else:
             st.info("✅ **DTCs:** Ninguno activo")
 
-        # Luces de Check Engine
         st.write("🚦 **Luces de Check Engine:**")
         check_light_alerts = []
         if selected_vehicle_data['engine_check_light_warning']:
@@ -726,17 +709,17 @@ if not st.session_state.df_fleet.empty:
             check_light_alerts.append("- 🛑 ¡Detener (Stop) ON!")
         
         if check_light_alerts:
-            num_columns_lights = 2 # Puedes ajustar este número para las luces, 2 es un buen inicio
+            num_columns_lights = 2 
             cols_lights = st.columns(num_columns_lights)
             col_idx_lights = 0
             for alert_text in check_light_alerts:
                 with cols_lights[col_idx_lights]:
-                    st.warning(alert_text) # O usar st.error para la de Stop
+                    st.warning(alert_text) 
                 col_idx_lights = (col_idx_lights + 1) % num_columns_lights
         else:
             st.info("- 🟢 Ninguna luz de Check Engine activa.")
 
     else:
-        st.warning("No se pudieron encontrar datos para el vehículo seleccionado.")
+        st.warning("No se pudieron encontrar datos para el vehículo seleccionado. Por favor, selecciona un vehículo en el menú desplegable.")
 else:
-    st.warning("No hay datos de vehículos disponibles para mostrar el detalle del camión y la visualización 3D.")
+    st.warning("No hay datos de vehículos disponibles para mostrar el detalle del camión y la visualización 3D. Por favor, asegúrate de que los IDs de vehículos en el código son correctos y que tu token de API de Samsara tiene los permisos adecuados.")
