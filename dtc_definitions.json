@@ -29,6 +29,102 @@
     "suggestion": "Inspeccione el sistema del turbocargador/supercargador y su válvula de descarga (wastegate) para ver si está atascada en posición cerrada. Verifique también el sensor de presión del múltiple de admisión (MAP). Una sobrepresión puede dañar el motor.",
     "model_part_id": "MOTOR"
   },
+  "SPN:247 FMI:14": {
+    "description": "Tiempo Total de Operación del Motor: Instrucciones especiales. Indica un evento o condición especial relacionado con el tiempo total de operación del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+247+FMI+14",
+    "suggestion": "Este FMI a menudo indica una recalibración, una actualización de software o un reinicio del ECM. No suele ser una falla crítica. Verifique los registros de mantenimiento del vehículo para ver si hay algún trabajo reciente que pueda explicar este código. Monitoree para ver si se repite.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:1209 FMI:4": {
+    "description": "Eje de Transmisión del Vehículo, Sensor de Velocidad de Salida: Voltaje por debajo de lo normal o cortocircuito a bajo. Indica un problema en el circuito del sensor de velocidad de salida de la transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+1209+FMI+4",
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de velocidad de salida de la transmisión para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Una lectura precisa de la velocidad de salida es crucial para el funcionamiento correcto de la transmisión y el control de la velocidad.",
+    "model_part_id": "TRANSMISION"
+  },
+  "SPN:77 FMI:3": {
+    "description": "Reóstato de Iluminación del Panel de Instrumentos: Voltaje por encima de lo normal o cortocircuito a alto. Problema con el circuito de control de la iluminación del tablero.",
+    "link": "https://www.google.com/search?q=J1939+SPN+77+FMI+3",
+    "suggestion": "Verifique el cableado y el reóstato de la iluminación del panel de instrumentos. Podría ser un cortocircuito a la alimentación o un reóstato defectuoso. Si la iluminación está siempre al máximo o no se puede ajustar, esto podría ser la causa.",
+    "model_part_id": "CABINA"
+  },
+  "SPN:629 FMI:8": {
+    "description": "Unidad de Control Electrónica (ECU): Frecuencia, ancho de pulso o período anormal. Indica una señal errática o fuera de rango de la ECU, a menudo relacionada con el procesador o la comunicación interna.",
+    "link": "https://www.google.com/search?q=J1939+SPN+629+FMI+8",
+    "suggestion": "Este es un problema interno de la ECU o de su comunicación. Intente reiniciar la ECU si es posible (desconectando la batería por un tiempo). Si el problema persiste, la ECU podría estar fallando y podría requerir ser reparada o reemplazada. Se necesita diagnóstico especializado.",
+    "model_part_id": "SISTEMA_ELECTRONICO"
+  },
+  "SPN:1067 FMI:11": {
+    "description": "Filtro de Aire, Diferencial de Presión: Falla no identificable. Indica un problema general o no específico con la medición del diferencial de presión del filtro de aire.",
+    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+11",
+    "suggestion": "Revise el sensor de presión diferencial del filtro de aire y su cableado. Asegúrese de que las mangueras que van al sensor no estén obstruidas o agrietadas. Si el filtro de aire está sucio, reemplácelo. Si el sensor está bien, podría haber un problema de flujo de aire en el sistema de admisión.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:789 FMI:10": {
+    "description": "Frenos de Remolque, Actuador: Tasa de cambio anormal. Indica que la velocidad a la que la presión o la activación de los frenos del remolque cambia es anormal.",
+    "link": "https://www.google.com/search?q=J1939+SPN+789+FMI+10",
+    "suggestion": "Verifique el sistema de frenos del remolque, incluyendo el actuador, las líneas de aire y las válvulas de control. Una tasa de cambio anormal podría indicar una fuga, una válvula defectuosa o un actuador que no responde correctamente. Es crítico para la seguridad del frenado.",
+    "model_part_id": "FRENOS"
+  },
+  "SPN:789 FMI:7": {
+    "description": "Frenos de Remolque, Actuador: El sistema mecánico no responde correctamente. Indica un problema mecánico o de funcionamiento del actuador de los frenos del remolque.",
+    "link": "https://www.google.com/search?q=J1939+SPN+789+FMI+7",
+    "suggestion": "Inspeccione físicamente el actuador de los frenos del remolque en busca de daños, obstrucciones o enlaces atascados. Verifique las líneas de aire y las válvulas asociadas. Podría requerir el reemplazo del actuador o la reparación de componentes mecánicos.",
+    "model_part_id": "FRENOS"
+  },
+  "SPN:790 FMI:7": {
+    "description": "Control de Frenos, Válvula de Modulación del Eje Trasero: El sistema mecánico no responde correctamente. Indica un problema mecánico o de funcionamiento de la válvula de modulación de frenos para el eje trasero.",
+    "link": "https://www.google.com/search?q=J1939+SPN+790+FMI+7",
+    "suggestion": "Revise la válvula de modulación de frenos del eje trasero y sus conexiones. Podría estar atascada, dañada o no operando libremente. Inspeccione las líneas de aire y asegúrese de que no haya obstrucciones. Es vital para un frenado equilibrado.",
+    "model_part_id": "FRENOS"
+  },
+  "SPN:791 FMI:7": {
+    "description": "Control de Frenos, Válvula de Modulación del Eje Delantero: El sistema mecánico no responde correctamente. Indica un problema mecánico o de funcionamiento de la válvula de modulación de frenos para el eje delantero.",
+    "link": "https://www.google.com/search?q=J1939+SPN+791+FMI+7",
+    "suggestion": "Revise la válvula de modulación de frenos del eje delantero y sus conexiones. Podría estar atascada, dañada o no operando libremente. Inspeccione las líneas de aire y asegúrese de que no haya obstrucciones. Es vital para un frenado equilibrado.",
+    "model_part_id": "FRENOS"
+  },
+  "SPN:1807 FMI:12": {
+    "description": "Sensor de Humedad del Combustible: Falla de la unidad o componente defectuoso. Indica un fallo interno o un mal funcionamiento del sensor de humedad del combustible.",
+    "link": "https://www.google.com/search?q=J1939+SPN+1807+FMI+12",
+    "suggestion": "Reemplace el sensor de humedad del combustible. Aunque no es una falla crítica que impida la operación inmediata, puede afectar el rendimiento del motor a largo plazo si el combustible está contaminado con agua.",
+    "model_part_id": "SISTEMA_COMBUSTIBLE"
+  },
+  "SPN:1067 FMI:7": {
+    "description": "Filtro de Aire, Diferencial de Presión: El sistema mecánico no responde correctamente. Indica un problema mecánico o de funcionamiento en el sistema de medición del diferencial de presión del filtro de aire.",
+    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+7",
+    "suggestion": "Verifique si hay obstrucciones en las mangueras del sensor de presión diferencial, daños físicos en el sensor o si el filtro de aire está extremadamente sucio. Asegúrese de que el sensor pueda medir correctamente la diferencia de presión. Podría ser un problema de calibración o un sensor atascado.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:629 FMI:12": {
+    "description": "Unidad de Control Electrónica (ECU): Falla de la unidad o componente defectuoso. Indica un fallo interno o un mal funcionamiento del hardware o software de la ECU.",
+    "link": "https://www.google.com/search?q=J1939+SPN+629+FMI+12",
+    "suggestion": "Este es un código crítico que sugiere un fallo importante en la ECU. Intente reiniciar la ECU si es posible. Si el problema persiste, la ECU es probablemente defectuosa y debe ser reemplazada o reparada por un especialista. Puede causar inoperabilidad del vehículo.",
+    "model_part_id": "SISTEMA_ELECTRONICO"
+  },
+  "SPN:790 FMI:2": {
+    "description": "Control de Frenos, Válvula de Modulación del Eje Trasero: Datos erráticos, intermitentes o incorrectos. Indica que la válvula de modulación del freno trasero está enviando señales inconsistentes o incorrectas.",
+    "link": "https://www.google.com/search?q=J1939+SPN+790+FMI+2",
+    "suggestion": "Verifique el cableado y las conexiones eléctricas de la válvula de modulación del freno trasero. Podría haber un cortocircuito, un circuito abierto o una interferencia electromagnética. Si el cableado está bien, la válvula podría estar defectuosa y requerir reemplazo.",
+    "model_part_id": "FRENOS"
+  },
+  "SPN:723 FMI:7": {
+    "description": "Sensor de Velocidad del Eje de Transmisión: El sistema mecánico no responde correctamente. Indica un problema mecánico o de funcionamiento del sensor de velocidad del eje de transmisión.",
+    "link": "https://www.google.com/search?q=J1939+SPN+723+FMI+7",
+    "suggestion": "Inspeccione el sensor de velocidad del eje de transmisión y su instalación. Podría estar flojo, dañado o tener suciedad acumulada. Verifique el anillo reluctor o los engranajes si son usados para la detección de velocidad. Una lectura precisa de la velocidad de transmisión es vital para los cambios de marcha.",
+    "model_part_id": "TRANSMISION"
+  },
+  "SPN:1067 FMI:2": {
+    "description": "Filtro de Aire, Diferencial de Presión: Datos erráticos, intermitentes o incorrectos. Indica que el sensor de presión diferencial del filtro de aire está enviando señales inconsistentes.",
+    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+2",
+    "suggestion": "Verifique el cableado y las conexiones del sensor de presión diferencial del filtro de aire. Asegúrese de que no haya aire atrapado o fugas en las mangueras que conectan al sensor. El sensor podría estar defectuoso y requerir reemplazo si el cableado está en buen estado.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:792 FMI:9": {
+    "description": "Frenos, Señal de Falla de Neumático (TPMS): Tasa de actualización o comunicación anormal. Indica un problema con la comunicación o la tasa de actualización de los datos del sistema de monitoreo de presión de neumáticos (TPMS).",
+    "link": "https://www.google.com/search?q=J1939+SPN+792+FMI+9",
+    "suggestion": "Revise los sensores TPMS en las ruedas para ver si están dañados o si sus baterías están bajas. Inspeccione el módulo receptor TPMS y su cableado. Podría haber interferencia. Asegúrese de que todos los sensores estén comunicándose correctamente.",
+    "model_part_id": "NEUMATICOS"
+  },
   "SPN:102 FMI:3": {
     "description": "Presión del Múltiple de Admisión (Boost Pressure): Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de presión del múltiple de admisión (MAP).",
     "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+3",
