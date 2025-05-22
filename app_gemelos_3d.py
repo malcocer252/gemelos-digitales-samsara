@@ -26,7 +26,7 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-TRUCK_MODEL_PATH = "truck.glb" # Asegúrate de que tu modelo 3D esté en formato .glb o .gltf
+TRUCK_MODEL_PATH = "truck4.glb" # Asegúrate de que tu modelo 3D esté en formato .glb o .gltf
 
 # --- Cargar las definiciones de DTCs ---
 DTC_DEFINITIONS = {}

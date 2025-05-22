@@ -1,318 +1,399 @@
 {
   "SPN:100 FMI:1": {
-    "description": "Presión de Aceite del Motor: Muy baja (Severidad 1). La presión del aceite ha caído por debajo del umbral normal, crítico para el motor.",
+    "description": "Presión de Aceite del Motor: Datos válidos pero por debajo del rango de operación normal - el nivel más bajo. Indica presión de aceite extremadamente baja.",
     "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+1",
-    "suggestion": "Detenga el vehículo de inmediato y revise el nivel de aceite. Si el nivel es correcto, no opere el motor y solicite asistencia técnica para verificar la bomba de aceite, el sensor de presión o posibles fugas internas."
+    "suggestion": "¡Detenga el motor inmediatamente! Verifique el nivel de aceite del motor y rellene si es necesario. Si el nivel es correcto, puede indicar una bomba de aceite defectuosa, un filtro de aceite obstruido o desgaste interno del motor. Se requiere diagnóstico profesional urgente.",
+    "model_part_id": "MOTOR"
   },
   "SPN:100 FMI:3": {
-    "description": "Presión de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede indicar un problema con el sensor o el circuito.",
+    "description": "Presión de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Indica un problema en el circuito del sensor de presión de aceite del motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+3",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión de aceite. Si están en buen estado, reemplace el sensor de presión de aceite. Si el problema persiste, es posible que haya un problema en la ECM."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión de aceite del motor para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de presión de aceite. Asegure una lectura precisa para monitorear el estado del motor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:100 FMI:4": {
-    "description": "Presión de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede indicar un problema con el sensor o el circuito.",
+    "description": "Presión de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Indica un problema en el circuito del sensor de presión de aceite del motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+4",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión de aceite en busca de cortocircuitos a tierra o circuitos abiertos. Si están en buen estado, reemplace el sensor de presión de aceite."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión de aceite del motor para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de presión de aceite. Es crucial que este sensor funcione correctamente para evitar daños al motor.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:100 FMI:18": {
+    "description": "Presión de Aceite del Motor: Datos válidos pero por debajo del rango de operación normal - moderadamente grave. Presión de aceite del motor baja pero no crítica.",
+    "link": "https://www.google.com/search?q=J1939+SPN+100+FMI+18",
+    "suggestion": "Verifique el nivel y la calidad del aceite del motor. Inspeccione si hay fugas. Considere un cambio de aceite y filtro. Si el problema persiste, puede ser un sensor defectuoso o un problema incipiente de la bomba de aceite o cojinetes. Revise el sistema de lubricación.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:102 FMI:0": {
+    "description": "Presión del Múltiple de Admisión (Boost Pressure): Datos válidos pero por encima del rango de operación normal - más grave. Indica sobrealimentación excesiva.",
+    "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+0",
+    "suggestion": "Inspeccione el sistema del turbocargador/supercargador y su válvula de descarga (wastegate) para ver si está atascada en posición cerrada. Verifique también el sensor de presión del múltiple de admisión (MAP). Una sobrepresión puede dañar el motor.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:102 FMI:3": {
+    "description": "Presión del Múltiple de Admisión (Boost Pressure): Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de presión del múltiple de admisión (MAP).",
+    "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+3",
+    "suggestion": "Verifique el cableado del sensor MAP para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor MAP. Una lectura incorrecta del sensor afectará el rendimiento del motor y la eficiencia del combustible.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:102 FMI:4": {
+    "description": "Presión del Múltiple de Admisión (Boost Pressure): Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de presión del múltiple de admisión (MAP).",
+    "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+4",
+    "suggestion": "Inspeccione el cableado del sensor MAP para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor MAP. Este sensor es vital para la gestión de la inyección de combustible y el control del turbo.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:102 FMI:10": {
+    "description": "Presión del Múltiple de Admisión (Boost Pressure): Velocidad de cambio anormal. La lectura de presión no cambia como se espera o cambia erráticamente.",
+    "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+10",
+    "suggestion": "Verifique si hay fugas en el sistema de admisión (mangueras, intercooler). Inspeccione la geometría variable del turbocargador si aplica. El sensor MAP también podría estar fallando intermitentemente. Un diagnóstico avanzado puede ser necesario.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:102 FMI:18": {
+    "description": "Presión del Múltiple de Admisión (Boost Pressure): Datos válidos pero por debajo del rango de operación normal - moderadamente grave. Baja presión de sobrealimentación.",
+    "link": "https://www.google.com/search?q=J1939+SPN+102+FMI+18",
+    "suggestion": "Verifique si hay fugas en el sistema de admisión/boost. Inspeccione el turbocargador para ver si hay daños o está atascado. El sensor MAP también podría estar defectuoso. Una baja presión afectará la potencia del motor.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:0": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Datos válidos pero por encima del rango de operación normal - más grave. El turbocargador está girando demasiado rápido.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+0",
+    "suggestion": "¡Detenga la operación! Una sobrevelocidad del turbo puede causar fallas catastróficas. Verifique la válvula de descarga (wastegate) del turbo para ver si está atascada en posición cerrada o el control de la geometría variable. El sensor de velocidad del turbo también podría estar defectuoso.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:1": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Datos válidos pero por debajo del rango de operación normal - más grave. El turbocargador no está alcanzando la velocidad deseada.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+1",
+    "suggestion": "Inspeccione el turbocargador en busca de daños en las aspas, obstrucciones en el escape o admisión. Verifique si la válvula de descarga (wastegate) o el mecanismo de geometría variable están atascados en posición abierta. Un sensor de velocidad del turbo defectuoso también es posible.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:3": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de velocidad del turbocargador.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+3",
+    "suggestion": "Verifique el cableado del sensor de velocidad del turbo para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de velocidad del turbo. Un sensor defectuoso puede causar problemas de rendimiento.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:4": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de velocidad del turbocargador.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+4",
+    "suggestion": "Inspeccione el cableado del sensor de velocidad del turbo para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de velocidad del turbo. Este sensor es importante para el control de la sobrealimentación.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:10": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Velocidad de cambio anormal. La velocidad del turbo no es consistente o varía erráticamente.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+10",
+    "suggestion": "Verifique si hay fugas en el sistema de admisión o escape que afecten el flujo al turbo. Inspeccione el control del turbocargador (actuador, válvulas). El sensor de velocidad también podría estar enviando lecturas intermitentes.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:103 FMI:18": {
+    "description": "Velocidad del Turbocargador (Turbo Speed): Datos válidos pero por debajo del rango de operación normal - moderadamente grave. La velocidad del turbocargador es más baja de lo esperado, afectando el rendimiento.",
+    "link": "https://www.google.com/search?q=J1939+SPN+103+FMI+18",
+    "suggestion": "Revise el turbocargador en busca de desgaste o daños menores. Verifique el filtro de aire y las tuberías de admisión/escape en busca de restricciones. La válvula de descarga (wastegate) puede estar ligeramente abierta o el control de la geometría variable no funciona correctamente.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:108 FMI:2": {
+    "description": "Presión Barométrica: Datos erráticos, intermitentes o incorrectos. La señal del sensor de presión barométrica es inconsistente.",
+    "link": "https://www.google.com/search?q=J1939+SPN+108+FMI+2",
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión barométrica. Si el cableado está bien, el sensor podría estar defectuoso o la ECM (módulo de control electrónico) está recibiendo datos inconsistentes. Reemplace el sensor si es necesario.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:108 FMI:3": {
+    "description": "Presión Barométrica: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de presión barométrica.",
+    "link": "https://www.google.com/search?q=J1939+SPN+108+FMI+3",
+    "suggestion": "Verifique el cableado del sensor de presión barométrica para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de presión barométrica. Este sensor ayuda a la ECM a compensar la altitud.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:108 FMI:4": {
+    "description": "Presión Barométrica: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de presión barométrica.",
+    "link": "https://www.google.com/search?q=J1939+SPN+108+FMI+4",
+    "suggestion": "Inspeccione el cableado del sensor de presión barométrica para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de presión barométrica. Una lectura incorrecta puede afectar la mezcla de combustible.",
+    "model_part_id": "MOTOR"
   },
   "SPN:110 FMI:0": {
-    "description": "Temperatura de Refrigerante del Motor: Datos válidos pero por encima del rango de operación normal - más grave. Sobrecalentamiento del motor, riesgo de daño grave.",
+    "description": "Temperatura del Refrigerante del Motor: Datos válidos pero por encima del rango de operación normal - más grave. Sobrecalentamiento del motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+0",
-    "suggestion": "Detenga el vehículo de forma segura y apague el motor inmediatamente. Revise el nivel de refrigerante, el radiador, las mangueras, el termostato y el ventilador. No continúe la operación hasta que la causa sea identificada y corregida."
+    "suggestion": "¡Detenga el motor inmediatamente! Verifique el nivel de refrigerante, la bomba de agua, el termostato, el radiador y el ventilador de enfriamiento. Puede haber una obstrucción en el sistema de enfriamiento o una fuga. El sobrecalentamiento prolongado puede causar daños graves al motor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:110 FMI:3": {
-    "description": "Temperatura de Refrigerante del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede ser un sensor de temperatura defectuoso o un problema de cableado.",
+    "description": "Temperatura del Refrigerante del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de temperatura del refrigerante.",
     "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+3",
-    "suggestion": "Verifique el cableado y las conexiones del sensor de temperatura de refrigerante. Sospeche del sensor si el cableado está bien. Podría dar lecturas erróneas de temperatura (demasiado bajas o altas)."
+    "suggestion": "Verifique el cableado del sensor de temperatura del refrigerante para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de temperatura del refrigerante. Una lectura incorrecta puede llevar a un mal rendimiento del motor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:110 FMI:4": {
-    "description": "Temperatura de Refrigerante del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede ser un sensor de temperatura defectuoso o un problema de cableado.",
+    "description": "Temperatura del Refrigerante del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de temperatura del refrigerante.",
     "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+4",
-    "suggestion": "Verifique el cableado y las conexiones del sensor de temperatura de refrigerante en busca de cortocircuitos a tierra. Si el cableado está bien, reemplace el sensor de temperatura. Podría causar que la ECM asuma sobrecalentamiento y active modos de protección."
+    "suggestion": "Inspeccione el cableado del sensor de temperatura del refrigerante para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de temperatura del refrigerante. Este sensor es crucial para la gestión térmica del motor.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:110 FMI:15": {
+    "description": "Temperatura del Refrigerante del Motor: Datos válidos pero por encima del rango de operación normal - el nivel más bajo. Temperatura del refrigerante ligeramente alta.",
+    "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+15",
+    "suggestion": "Monitoree la temperatura del motor de cerca. Verifique el nivel de refrigerante y el funcionamiento del ventilador de enfriamiento. Considere limpiar el radiador. Si el problema persiste, podría indicar un termostato que comienza a fallar.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:110 FMI:16": {
+    "description": "Temperatura del Refrigerante del Motor: Datos válidos pero por encima del rango de operación normal - moderadamente grave. Temperatura del refrigerante alta, requiere atención.",
+    "link": "https://www.google.com/search?q=J1939+SPN+110+FMI+16",
+    "suggestion": "Detenga el motor en un lugar seguro. Verifique el nivel de refrigerante, la bomba de agua, el termostato y el radiador. Puede haber una restricción en el flujo de aire o refrigerante. No opere el motor hasta que se resuelva el problema para evitar daños mayores.",
+    "model_part_id": "MOTOR"
   },
   "SPN:111 FMI:1": {
-    "description": "Nivel de Refrigerante: Muy bajo. Indica que el nivel de refrigerante ha caído significativamente.",
+    "description": "Nivel de Refrigerante: Datos válidos pero por debajo del rango de operación normal - más grave. Nivel de refrigerante peligrosamente bajo.",
     "link": "https://www.google.com/search?q=J1939+SPN+111+FMI+1",
-    "suggestion": "Revise visualmente el nivel de refrigerante y reponga si es necesario. Inspeccione el sistema de enfriamiento en busca de fugas (radiador, mangueras, bomba de agua, etc.). Un nivel bajo puede llevar a sobrecalentamiento."
+    "suggestion": "¡Detenga el motor inmediatamente! Un nivel bajo de refrigerante puede causar sobrecalentamiento severo y daños al motor. Verifique el nivel de refrigerante y busque fugas en el sistema de enfriamiento (mangueras, radiador, bomba de agua). Rellene con el refrigerante adecuado.",
+    "model_part_id": "MOTOR"
   },
   "SPN:111 FMI:3": {
-    "description": "Nivel de Refrigerante del Motor: Voltaje Anormalmente Alto o Cortocircuito a Fuente Alta. Problema eléctrico con el sensor de nivel de refrigerante, lectura errónea o un problema real con el nivel.",
+    "description": "Nivel de Refrigerante: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de nivel de refrigerante.",
     "link": "https://www.google.com/search?q=J1939+SPN+111+FMI+3",
-    "suggestion": "Revise el cableado del sensor de nivel de refrigerante para cortocircuitos a la alimentación. Pruebe el sensor o reemplácelo si es necesario. Puede causar lecturas incorrectas del nivel."
+    "suggestion": "Verifique el cableado del sensor de nivel de refrigerante para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de nivel de refrigerante. Una lectura incorrecta podría ocultar un nivel bajo real.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:111 FMI:4": {
+    "description": "Nivel de Refrigerante: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de nivel de refrigerante.",
+    "link": "https://www.google.com/search?q=J1939+SPN+111+FMI+4",
+    "suggestion": "Inspeccione el cableado del sensor de nivel de refrigerante para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de nivel de refrigerante. Asegúrese de que el sensor esté limpio y no corroído.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:111 FMI:18": {
+    "description": "Nivel de Refrigerante: Datos válidos pero por debajo del rango de operación normal - moderadamente grave. Nivel de refrigerante bajo pero no crítico.",
+    "link": "https://www.google.com/search?q=J1939+SPN+111+FMI+18",
+    "suggestion": "Verifique el nivel de refrigerante y rellene según sea necesario. Busque posibles fugas menores en mangueras, conexiones o el radiador. Monitoree el nivel de cerca para evitar que baje aún más.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:157 FMI:0": {
+    "description": "Presión del Riel de Combustible: Datos válidos pero por encima del rango de operación normal - más grave. Presión de combustible excesivamente alta en el riel.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+0",
+    "suggestion": "Indica un problema grave en el sistema de combustible, posiblemente una válvula reguladora de presión de combustible atascada, un sensor de presión defectuoso o un problema en la bomba de alta presión. Se requiere un diagnóstico profesional inmediato para evitar daños a los inyectores o a la bomba.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:157 FMI:1": {
+    "description": "Presión del Riel de Combustible: Datos válidos pero por debajo del rango de operación normal - más grave. Presión de combustible extremadamente baja en el riel.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+1",
+    "suggestion": "Verifique los filtros de combustible en busca de obstrucciones. Inspeccione la bomba de combustible de baja presión y la de alta presión. Puede haber una fuga significativa de combustible o un sensor de presión de combustible defectuoso. Esto afectará el rendimiento del motor o evitará que arranque.",
+    "model_part_id": "MOTOR"
   },
   "SPN:157 FMI:3": {
-    "description": "Presión de Riel de Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor de presión del riel o su circuito.",
+    "description": "Presión del Riel de Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de presión del riel de combustible.",
     "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+3",
-    "suggestion": "Inspeccione el cableado del sensor de presión del riel de combustible para cortocircuitos a la alimentación. Si el cableado es correcto, reemplace el sensor de presión del riel. Podría causar problemas de rendimiento del motor."
+    "suggestion": "Inspeccione el cableado del sensor de presión del riel de combustible para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de presión del riel de combustible. Las lecturas incorrectas impactan la inyección.",
+    "model_part_id": "MOTOR"
   },
   "SPN:157 FMI:4": {
-    "description": "Presión de Riel de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor de presión del riel o su circuito.",
+    "description": "Presión del Riel de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de presión del riel de combustible.",
     "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+4",
-    "suggestion": "Inspeccione el cableado del sensor de presión del riel de combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado es correcto, reemplace el sensor de presión del riel. Puede afectar la inyección de combustible y el rendimiento."
+    "suggestion": "Inspeccione el cableado del sensor de presión del riel de combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de presión del riel de combustible. Un sensor defectuoso puede causar problemas de arranque o rendimiento.",
+    "model_part_id": "MOTOR"
   },
   "SPN:157 FMI:10": {
-    "description": "Presión de Riel de Combustible: Velocidad de cambio anormal. La presión del riel no responde como se espera a los cambios de demanda.",
+    "description": "Presión del Riel de Combustible: Velocidad de cambio anormal. La presión del riel no se mantiene estable o fluctúa erráticamente.",
     "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+10",
-    "suggestion": "Revise la bomba de combustible de alta presión, el regulador de presión del riel y el sensor de presión del riel. Un filtro de combustible obstruido también podría ser la causa. Es crucial para el rendimiento del motor."
+    "suggestion": "Verifique la válvula reguladora de presión de combustible. Inspeccione la bomba de alta presión en busca de signos de falla. También puede ser un problema intermitente con el sensor de presión del riel. Un diagnóstico con una herramienta de escaneo es crucial.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:157 FMI:18": {
+    "description": "Presión del Riel de Combustible: Datos válidos pero por debajo del rango de operación normal - moderadamente grave. Baja presión de combustible en el riel, afectando el rendimiento.",
+    "link": "https://www.google.com/search?q=J1939+SPN+157+FMI+18",
+    "suggestion": "Revise los filtros de combustible. Verifique la presión de la bomba de baja presión. Puede haber una restricción en las líneas de combustible o un problema menor con la bomba de alta presión o el regulador. Esto causará una pérdida de potencia.",
+    "model_part_id": "MOTOR"
+  },
+  "SPN:168 FMI:3": {
+    "description": "Voltaje de la Batería (ECM): Voltaje por encima de lo normal o cortocircuito a alto. La ECM está detectando un voltaje excesivamente alto en el sistema eléctrico.",
+    "link": "https://www.google.com/search?q=J1939+SPN+168+FMI+3",
+    "suggestion": "Verifique el sistema de carga del vehículo (alternador, regulador de voltaje). Una sobrecarga puede dañar los componentes electrónicos. Si el alternador está cargando demasiado, reemplácelo. También verifique las conexiones de la batería.",
+    "model_part_id": "CABINA"
+  },
+  "SPN:168 FMI:4": {
+    "description": "Voltaje de la Batería (ECM): Voltaje por debajo de lo normal o cortocircuito a bajo. La ECM está detectando un voltaje insuficientemente bajo en el sistema eléctrico.",
+    "link": "https://www.google.com/search?q=J1939+SPN+168+FMI+4",
+    "suggestion": "Verifique la batería, las conexiones de la batería y el alternador. Una batería descargada o un alternador defectuoso pueden causar este código. Inspeccione el cableado principal en busca de caídas de voltaje. Esto puede afectar el arranque y el funcionamiento de los sistemas.",
+    "model_part_id": "CABINA"
   },
   "SPN:174 FMI:0": {
-    "description": "Temperatura del Combustible: Datos válidos pero por encima del rango de operación normal - más grave. El combustible está demasiado caliente, afectando el rendimiento o la seguridad.",
+    "description": "Temperatura del Combustible: Datos válidos pero por encima del rango de operación normal - más grave. La temperatura del combustible es excesivamente alta.",
     "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+0",
-    "suggestion": "Verifique el sistema de enfriamiento del combustible y posibles restricciones en el retorno de combustible al tanque. Asegúrese de que no haya fuentes de calor excesivo cerca de las líneas de combustible."
+    "suggestion": "Verifique el sistema de enfriamiento del combustible si aplica. Inspeccione el sensor de temperatura del combustible. El sobrecalentamiento del combustible puede reducir la lubricación y afectar el rendimiento de los inyectores.",
+    "model_part_id": "MOTOR"
   },
   "SPN:174 FMI:3": {
-    "description": "Temperatura del Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema con el sensor de temperatura del combustible.",
+    "description": "Temperatura del Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de temperatura del combustible.",
     "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+3",
-    "suggestion": "Revise el cableado y las conexiones del sensor de temperatura del combustible para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor."
+    "suggestion": "Inspeccione el cableado del sensor de temperatura del combustible para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de temperatura del combustible. Una lectura incorrecta afectará la eficiencia del combustible.",
+    "model_part_id": "MOTOR"
   },
   "SPN:174 FMI:4": {
-    "description": "Temperatura del Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema con el sensor de temperatura del combustible.",
+    "description": "Temperatura del Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de temperatura del combustible.",
     "link": "https://www.google.com/search?q=J1939+SPN+174+FMI+4",
-    "suggestion": "Revise el cableado y las conexiones del sensor de temperatura del combustible para cortocircuitos a tierra. Si el cableado está bien, reemplace el sensor."
+    "suggestion": "Inspeccione el cableado del sensor de temperatura del combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de temperatura del combustible. Este sensor es importante para la dosificación precisa del combustible.",
+    "model_part_id": "MOTOR"
   },
-  "SPN:190 FMI:0": {
-    "description": "Velocidad del Motor (RPM): Datos válidos pero por encima del rango de operación normal - más grave. El motor está sobre-revolucionado, riesgo de daño.",
-    "link": "https://www.google.com/search?q=J1939+SPN+190+FMI+0",
-    "suggestion": "Reduzca la velocidad del vehículo y cambie a una marcha superior si es posible. Investigue la causa del sobre-revolucionado, que podría ser un problema de la transmisión, el control de crucero o el gobernador del motor."
+  "SPN:175 FMI:0": {
+    "description": "Temperatura del Aceite del Motor: Datos válidos pero por encima del rango de operación normal - más grave. Temperatura del aceite del motor excesivamente alta.",
+    "link": "https://www.google.com/search?q=J1939+SPN+175+FMI+0",
+    "suggestion": "¡Detenga el motor! Verifique el nivel de aceite del motor. Inspeccione el enfriador de aceite del motor y sus líneas en busca de obstrucciones o daños. El sobrecalentamiento del aceite puede llevar a una lubricación inadecuada y daños graves al motor.",
+    "model_part_id": "MOTOR"
   },
-  "SPN:190 FMI:2": {
-    "description": "Velocidad del Motor (RPM): Datos erráticos, intermitentes o incorrectos. Puede indicar un sensor de RPM defectuoso, interferencia, o problemas en el cigüeñal/árbol de levas.",
-    "link": "https://www.google.com/search?q=J1939+SPN+190+FMI+2",
-    "suggestion": "Inspeccione el sensor de RPM del motor (posición del cigüeñal o árbol de levas) y su cableado en busca de daños, suciedad o conexiones sueltas. Reemplace el sensor si es necesario. Puede afectar el rendimiento y el encendido."
+  "SPN:175 FMI:3": {
+    "description": "Temperatura del Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Problema eléctrico en el sensor de temperatura del aceite del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+175+FMI+3",
+    "suggestion": "Inspeccione el cableado del sensor de temperatura del aceite del motor para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor de temperatura del aceite del motor. Una lectura incorrecta puede afectar la estrategia de enfriamiento del motor.",
+    "model_part_id": "MOTOR"
   },
-  "SPN:247 FMI:14": {
-    "description": "Falla del Sensor de Presión de Combustible: Calibración incorrecta o falta de calibración. Sugiere que el sensor de presión de combustible está mal calibrado o necesita ser calibrado, lo que puede resultar en lecturas inexactas.",
-    "link": "https://www.dtcdecode.com/SPN/247-FMI-14",
-    "suggestion": "Verifique si el sensor de presión de combustible requiere calibración a través de la herramienta de diagnóstico. Si la calibración no resuelve el problema, el sensor podría estar defectuoso y necesitar ser reemplazado."
-  },
-  "SPN:625 FMI:12": {
-    "description": "Controladora de la Red de Comunicación de la Transmisión: Dispositivo o componente defectuoso. Problema en el módulo de control de la transmisión (TCM) o su comunicación en el bus de datos (CAN).",
-    "link": "https://www.google.com/search?q=J1939+SPN+625+FMI+12",
-    "suggestion": "Revise el cableado y las conexiones del módulo de control de la transmisión (TCM). Verifique la integridad del bus de datos CAN. Si todo está bien, es probable que la TCM esté defectuosa y requiera reemplazo o reprogramación."
-  },
-  "SPN:629 FMI:8": {
-    "description": "Frecuencia de datos anormal o ancho de pulso anormal (ECU). La ECU está experimentando una falla en la frecuencia de sus señales de datos o en el ancho de pulso, lo que podría ser un problema interno de la ECU o una interferencia severa en su comunicación, afectando su operación general.",
-    "link": "https://www.google.com/search?q=J1939+SPN+629+FMI+8",
-    "suggestion": "Esto apunta a un problema interno de la Unidad de Control Electrónico (ECU). Se recomienda contactar a un técnico calificado para diagnóstico y posible reparación/reemplazo de la ECU. Verifique también la alimentación de la ECU y las conexiones a tierra."
-  },
-  "SPN:629 FMI:12": {
-    "description": "Dispositivo o componente defectuoso (ECU). Un FMI 12 indica un fallo interno del componente en sí de la Unidad de Control Electrónico (ECU), lo que significa que la ECU ya no funciona como se espera.",
-    "link": "https://www.google.com/search?q=J1939+SPN+629+FMI+12",
-    "suggestion": "Indica un fallo interno crítico de la ECU. Es necesario un diagnóstico profesional y, en la mayoría de los casos, el reemplazo o reparación de la ECU. Asegúrese de que no haya problemas de voltaje o conexiones que puedan haberlo causado."
-  },
-  "SPN:723 FMI:7": {
-    "description": "Sensor de Posición del Cigüeñal: Sistema mecánico no responde correctamente o está fuera de ajuste. La señal del sensor de posición del cigüeñal es inconsistente con la esperada, posiblemente debido a un problema mecánico o de alineación.",
-    "link": "https://www.google.com/search?q=J1939+SPN+723+FMI+7",
-    "suggestion": "Revise el sensor de posición del cigüeñal en busca de daños físicos o acumulación de residuos. Inspeccione la rueda fónica del cigüeñal para ver si hay dientes dañados o desalineación. Asegúrese de que el sensor esté correctamente montado y tenga la distancia (gap) adecuada."
-  },
-  "SPN:789 FMI:7": {
-    "description": "Sistema mecánico de Válvula de Dosificación de AdBlue/DEF o Bomba de Dosificación de DEF no responde correctamente o está fuera de ajuste. Posiblemente debido a una obstrucción, cristalización, o un mal funcionamiento mecánico.",
-    "link": "https://www.google.com/search?q=J1939+SPN+789+FMI+7",
-    "suggestion": "Inspeccione la bomba y la válvula de dosificación de DEF en busca de obstrucciones, cristalización o daños físicos. Verifique las líneas de DEF. Realice una prueba de dosificación si es posible con la herramienta de diagnóstico. Limpie o reemplace componentes si es necesario."
-  },
-  "SPN:789 FMI:10": {
-    "description": "Tasa de cambio anormal de la Válvula/Bomba de Dosificación de AdBlue/DEF. La respuesta de la bomba o válvula de dosificación de DEF es más lenta o más rápida de lo esperado.",
-    "link": "https://www.google.com/search?q=J1939+SPN+789+FMI+10",
-    "suggestion": "Este código sugiere un problema de rendimiento de la bomba o válvula de dosificación de DEF. Verifique si hay restricciones en el sistema de DEF, fugas o fallas internas en la bomba/válvula. Puede requerir el reemplazo del componente."
-  },
-  "SPN:790 FMI:2": {
-    "description": "Datos erráticos, intermitentes o incorrectos de la Presión del sistema de AdBlue/DEF. El sensor de presión del DEF está enviando datos inconsistentes o inverosímiles.",
-    "link": "https://www.google.com/search?q=J1939+SPN+790+FMI+2",
-    "suggestion": "Revise el cableado y las conexiones del sensor de presión del DEF en busca de problemas. Inspeccione el sensor de presión del DEF en busca de daños. Podría haber aire en el sistema de DEF que necesite purga. Si el problema persiste, reemplace el sensor."
-  },
-  "SPN:790 FMI:7": {
-    "description": "Sistema mecánico de Presión del sistema de AdBlue/DEF no responde correctamente o está fuera de ajuste. El sistema no está logrando o manteniendo la presión requerida.",
-    "link": "https://www.google.com/search?q=J1939+SPN+790+FMI+7",
-    "suggestion": "Busque fugas en el sistema de líneas de DEF. Verifique la bomba de DEF y el regulador de presión para asegurar que están funcionando correctamente. Puede indicar un problema de hardware que impide la presión adecuada."
-  },
-  "SPN:791 FMI:7": {
-    "description": "Sistema mecánico de Temperatura del tanque de AdBlue/DEF o Sistema de Calentamiento del DEF no responde correctamente o está fuera de ajuste. El sistema de calentamiento del DEF no está funcionando correctamente.",
-    "link": "https://www.google.com/search?q=J1939+SPN+791+FMI+7",
-    "suggestion": "Inspeccione los elementos de calentamiento del tanque de DEF, su cableado y el termostato si aplica. Asegúrese de que el DEF no esté congelado en climas fríos y que el sistema de calentamiento pueda operar."
-  },
-  "SPN:792 FMI:9": {
-    "description": "Anomalía de tasa de actualización o datos inválidos del Sensor de velocidad de las ruedas delanteras o Velocidad de salida de la transmisión. La ECM no está recibiendo actualizaciones o los datos son inconsistentes/inválidos.",
-    "link": "https://www.google.com/search?q=J1939+SPN+792+FMI+9",
-    "suggestion": "Verifique el sensor de velocidad de la rueda delantera o de salida de la transmisión (según el contexto específico del vehículo). Revise el cableado y las conexiones del sensor en busca de daños, suciedad o corrosión. Limpie el sensor si es necesario o reemplácelo si está defectuoso."
-  },
-  "SPN:77 FMI:3": {
-    "description": "Luz de advertencia de presión de aceite del motor: Voltaje anormalmente alto o cortocircuito a fuente alta. Puede indicar un problema con el circuito de la luz de advertencia de presión de aceite, un sensor defectuoso o un cableado en corto a la alimentación.",
-    "link": "https://www.google.com/search?q=J1939+SPN+77+FMI+3",
-    "suggestion": "Verifique el cableado del sensor de presión de aceite para un cortocircuito a la alimentación. Pruebe el sensor de presión de aceite. Asegúrese de que la luz de advertencia en el tablero no tenga un problema interno que la mantenga encendida."
-  },
-  "SPN:94 FMI:3": {
-    "description": "Presión del Suministro de Combustible: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor de presión de combustible o su cableado.",
-    "link": "https://www.google.com/search?q=J1939+SPN+94+FMI+3",
-    "suggestion": "Inspeccione el cableado del sensor de presión de suministro de combustible para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Esto puede afectar el rendimiento del motor."
-  },
-  "SPN:94 FMI:4": {
-    "description": "Presión del Suministro de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor de presión de combustible o su cableado.",
-    "link": "https://www.google.com/search?q=J1939+SPN+94+FMI+4",
-    "suggestion": "Inspeccione el cableado del sensor de presión de suministro de combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Asegure un suministro de combustible adecuado."
-  },
-  "SPN:97 FMI:0": {
-    "description": "Indicador de Agua en el Combustible: Datos válidos pero por encima del rango de operación normal - más grave. Presencia excesiva de agua en el combustible, riesgo de daño a inyectores.",
-    "link": "https://www.google.com/search?q=J1939+SPN+97+FMI+0",
-    "suggestion": "Drene el separador de agua/filtro de combustible inmediatamente. Si el problema persiste después de drenar, reemplace el filtro de combustible y considere probar la calidad del combustible."
-  },
-  "SPN:97 FMI:1": {
-    "description": "Indicador de Agua en el Combustible: Datos válidos pero por debajo del rango de operación normal - más grave. Posiblemente un sensor defectuoso o cableado.",
-    "link": "https://www.google.com/search?q=J1939+SPN+97+FMI+1",
-    "suggestion": "Revise el cableado y las conexiones del sensor de agua en el combustible. Si no hay agua presente y el código persiste, el sensor podría estar defectuoso y necesitar ser reemplazado."
-  },
-  "SPN:1067 FMI:11": {
-    "description": "Falla no identificable o causa raíz desconocida del Filtro de aire del motor/admisión. El sistema ha detectado una condición inusual con el filtro de aire que no se puede categorizar.",
-    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+11",
-    "suggestion": "Inspeccione el filtro de aire en busca de suciedad excesiva, daños o una instalación incorrecta. Verifique los sensores de presión diferencial asociados al filtro. Si el filtro está limpio y no hay problemas obvios, se requiere un diagnóstico más profundo."
-  },
-  "SPN:1067 FMI:7": {
-    "description": "Sistema mecánico no responde correctamente o está fuera de ajuste para el Filtro de aire del motor. El sistema de monitoreo de la restricción del filtro de aire no funciona como debería o el filtro está muy restringido.",
-    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+7",
-    "suggestion": "Revise físicamente el filtro de aire para ver si está obstruido o muy sucio y reemplácelo si es necesario. Verifique que el sensor de restricción del filtro de aire (si aplica) no esté atascado o mal funcionando mecánicamente."
-  },
-  "SPN:1067 FMI:2": {
-    "description": "Datos erráticos, intermitentes o incorrectos del Filtro de aire del motor. El sensor de presión diferencial del filtro de aire está enviando datos inconsistentes o inverosímiles.",
-    "link": "https://www.google.com/search?q=J1939+SPN+1067+FMI+2",
-    "suggestion": "Inspeccione el sensor de presión diferencial del filtro de aire y su cableado. Asegúrese de que las mangueras de presión al sensor no estén obstruidas o dañadas. Limpie el sensor si es necesario o reemplácelo."
-  },
-  "SPN:1209 FMI:4": {
-    "description": "Presión del Filtro de Partículas Diésel (DPF): Voltaje Anormalmente Bajo o Cortocircuito a Fuente Baja. Indica un problema con el sensor de presión del DPF, que podría estar defectuoso o tener un problema de cableado.",
-    "link": "https://www.dtcdecode.com/SPN/1209-FMI-4",
-    "suggestion": "Verifique el cableado del sensor de presión del DPF para cortocircuitos a tierra o circuitos abiertos. Si el cableado está intacto, reemplace el sensor de presión diferencial del DPF. Una lectura incorrecta puede afectar la regeneración del DPF."
-  },
-  "SPN:1564 FMI:2": {
-    "description": "Inyector de DEF (AdBlue): Datos erráticos, intermitentes o incorrectos. El inyector de DEF no está entregando la cantidad correcta o su señal de control es inconsistente.",
-    "link": "https://www.google.com/search?q=J1939+SPN+1564+FMI+2",
-    "suggestion": "Verifique el inyector de DEF para detectar obstrucciones o cristalización. Inspeccione el cableado y las conexiones eléctricas del inyector. Si el cableado está bien y el inyector no está obstruido, el inyector de DEF podría estar defectuoso y necesitar reemplazo."
-  },
-  "SPN:1807 FMI:12": {
-    "description": "Dispositivo o componente defectuoso (ej. Inyector de Combustible o Sensor de flujo de combustible de la bomba de alta presión). Un FMI 12 indica un fallo interno del componente en sí.",
-    "link": "https://www.google.com/search?q=J1939+SPN+1807+FMI+12",
-    "suggestion": "Identifique el componente específico al que se refiere el SPN 1807 (puede variar por fabricante). Si es un inyector, realice pruebas de cilindros. Si es un sensor o bomba, inspeccione y considere el reemplazo."
+  "SPN:175 FMI:4": {
+    "description": "Temperatura del Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema eléctrico en el sensor de temperatura del aceite del motor.",
+    "link": "https://www.google.com/search?q=J1939+SPN+175+FMI+4",
+    "suggestion": "Inspeccione el cableado del sensor de temperatura del aceite del motor para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de temperatura del aceite del motor. Este sensor es crítico para la protección del motor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:1808 FMI:2": {
     "description": "Datos erráticos, intermitentes o incorrectos. Comúnmente asociado con un problema en el circuito de alimentación del combustible, como una señal inconsistente o fallas intermitentes del sensor de presión de combustible o del actuador del flujo de combustible.",
     "link": "https://www.google.com/search?q=J1939+SPN+1808+FMI+2+fault+code+diesel",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor/actuador de presión/flujo de combustible. Verifique si hay interferencias eléctricas. Si el cableado está bien, pruebe el sensor/actuador o reemplácelo si es necesario."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor/actuador de presión/flujo de combustible. Verifique si hay interferencias eléctricas. Si el cableado está bien, pruebe el sensor/actuador o reemplácelo si es necesario.",
+    "model_part_id": "MOTOR"
   },
   "SPN:2791 FMI:13": {
     "description": "Falla de EGR (Recirculación de Gases de Escape): Falla de la válvula de recirculación de gases de escape, fuera de calibración. Esto puede afectar las emisiones, el rendimiento y la eficiencia del motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+2791+FMI+13+EGR",
-    "suggestion": "Inspeccione la válvula EGR en busca de acumulación de hollín o daños mecánicos. Intente limpiar la válvula EGR si es posible. Si el problema persiste, es probable que la válvula necesite ser reemplazada o recalibrada con la herramienta de diagnóstico."
+    "suggestion": "Inspeccione la válvula EGR en busca de acumulación de hollín o daños mecánicos. Intente limpiar la válvula EGR si es posible. Si el problema persiste, es probable que la válvula necesite ser reemplazada o recalibrada con la herramienta de diagnóstico.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3031 FMI:9": {
     "description": "Anomalía de tasa de actualización o datos inválidos (Sensor de NOx). La ECM no está recibiendo una actualización de datos esperada o los datos recibidos son inválidos de un sensor o componente específico, a menudo relacionado con el sensor de NOx.",
     "link": "https://quickserve.cummins.com/",
-    "suggestion": "Verifique el cableado y las conexiones del sensor de NOx. Asegúrese de que el sensor esté limpio y no dañado. Si el problema persiste, el sensor de NOx puede estar defectuoso y requerir reemplazo. Esto afectará el sistema de post-tratamiento."
+    "suggestion": "Verifique el cableado y las conexiones del sensor de NOx. Asegúrese de que el sensor esté limpio y no dañado. Si el problema persiste, el sensor de NOx puede estar defectuoso y requerir reemplazo. Esto afectará el sistema de post-tratamiento.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3226 FMI:9": {
     "description": "Sensor de NOx Salida de Escape (Post-catalizador): Anomalía de tasa de actualización o datos inválidos. La ECM no está recibiendo actualizaciones de datos esperadas o los datos recibidos del sensor de NOx de salida son inconsistentes/inválidos.",
     "link": "https://www.google.com/search?q=J1939+SPN+3226+FMI+9",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de NOx de salida (ubicado después del catalizador SCR) en busca de daños, corrosión o cortocircuitos. Si el cableado está en buen estado, el sensor de NOx podría estar defectuoso y requerir reemplazo. Esto afectará directamente la monitorización de emisiones."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de NOx de salida (ubicado después del catalizador SCR) en busca de daños, corrosión o cortocircuitos. Si el cableado está en buen estado, el sensor de NOx podría estar defectuoso y requerir reemplazo. Esto afectará directamente la monitorización de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3241 FMI:4": {
     "description": "Sensor de Nivel de Urea (DEF): Voltaje por debajo de lo normal o cortocircuito a bajo. Problema con el sensor de nivel de DEF o su cableado, que puede afectar el sistema de post-tratamiento.",
     "link": "https://www.google.com/search?q=J1939+SPN+3241+FMI+4",
-    "suggestion": "Inspeccione el cableado del sensor de nivel de DEF para cortocircuitos a tierra o circuitos abiertos. Verifique el nivel de DEF en el tanque. Si el cableado es correcto, reemplace el sensor de nivel de DEF. Puede impedir la correcta dosificación de DEF."
+    "suggestion": "Inspeccione el cableado del sensor de nivel de DEF para cortocircuitos a tierra o circuitos abiertos. Verifique el nivel de DEF en el tanque. Si el cableado es correcto, reemplace el sensor de nivel de DEF. Puede impedir la correcta dosificación de DEF.",
+    "model_part_id": "TANQUECOMBUSTIBLE"
   },
   "SPN:3251 FMI:0": {
     "description": "Temperatura del Refrigerante de Post-tratamiento: Datos válidos pero por encima del rango de operación normal - más grave. Sobrecalentamiento en el sistema de emisiones, lo que puede causar daños.",
     "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+0",
-    "suggestion": "Verifique el sistema de enfriamiento del post-tratamiento, incluyendo la bomba de refrigerante del SCR y las líneas. Asegúrese de que no haya obstrucciones o problemas de flujo que causen el sobrecalentamiento. Evite la operación continua en esta condición."
+    "suggestion": "Verifique el sistema de enfriamiento del post-tratamiento, incluyendo la bomba de refrigerante del SCR y las líneas. Asegúrese de que no haya obstrucciones o problemas de flujo que causen el sobrecalentamiento. Evite la operación continua en esta condición.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3251 FMI:3": {
     "description": "Temperatura del Refrigerante de Post-tratamiento: Voltaje por encima de lo normal o cortocircuito a alto. Puede ser un sensor defectuoso o cableado en el sistema de emisiones.",
     "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+3",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de temperatura del refrigerante de post-tratamiento para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de temperatura del refrigerante de post-tratamiento para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3251 FMI:4": {
     "description": "Temperatura del Refrigerante de Post-tratamiento: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede ser un sensor defectuoso o cableado en el sistema de emisiones.",
     "link": "https://www.google.com/search?q=J1939+SPN+3251+FMI+4",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de temperatura del refrigerante de post-tratamiento para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de temperatura del refrigerante de post-tratamiento para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3363 FMI:0": {
     "description": "Presión del Filtro de Partículas Diésel (DPF): Datos válidos pero por encima del rango de operación normal - más grave. Indica un DPF obstruido o un problema de regeneración.",
     "link": "https://www.google.com/search?q=J1939+SPN+3363+FMI+0",
-    "suggestion": "El DPF está severamente obstruido. Intente realizar una regeneración forzada si es posible y seguro. Si no se resuelve, el DPF podría necesitar ser limpiado profesionalmente o reemplazado. Evite la operación continua para prevenir daños mayores."
+    "suggestion": "El DPF está severamente obstruido. Intente realizar una regeneración forzada si es posible y seguro. Si no se resuelve, el DPF podría necesitar ser limpiado profesionalmente o reemplazado. Evite la operación continua para prevenir daños mayores.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3363 FMI:1": {
     "description": "Presión del Filtro de Partículas Diésel (DPF): Datos válidos pero por debajo del rango de operación normal - más grave. Puede indicar una fuga en el sistema de escape o un DPF dañado.",
     "link": "https://www.google.com/search?q=J1939+SPN+3363+FMI+1",
-    "suggestion": "Inspeccione el DPF y las tuberías de escape antes y después del DPF en busca de fugas o daños. Verifique la conexión de las mangueras al sensor de presión diferencial del DPF. Un DPF roto o agrietado puede ser la causa."
+    "suggestion": "Inspeccione el DPF y las tuberías de escape antes y después del DPF en busca de fugas o daños. Verifique la conexión de las mangueras al sensor de presión diferencial del DPF. Un DPF roto o agrietado puede ser la causa.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3363 FMI:3": {
     "description": "Voltaje anormalmente alto o cortocircuito a fuente alta (Sensor de temperatura del catalizador de oxidación diesel (DOC) o DPF). La señal de voltaje del sensor es demasiado alta.",
     "link": "https://www.google.com/search?q=J1939+SPN+3363+FMI+3",
-    "suggestion": "Verifique el cableado del sensor de temperatura del DOC/DPF para cortocircuitos a la alimentación. Pruebe la resistencia del sensor. Si el cableado es correcto, reemplace el sensor de temperatura. Las lecturas incorrectas pueden afectar la regeneración y el monitoreo de emisiones."
+    "suggestion": "Verifique el cableado del sensor de temperatura del DOC/DPF para cortocircuitos a la alimentación. Pruebe la resistencia del sensor. Si el cableado es correcto, reemplace el sensor de temperatura. Las lecturas incorrectas pueden afectar la regeneración y el monitoreo de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3597 FMI:31": {
     "description": "Calibración del Sistema de Dosificación de Reductor (DEF): Condición de falla presente. Indica que el sistema de dosificación de DEF tiene un problema de calibración o funcionalidad.",
     "link": "https://www.google.com/search?q=J1939+SPN+3597+FMI+31",
-    "suggestion": "Realice un procedimiento de calibración del sistema de dosificación de DEF utilizando una herramienta de diagnóstico. Si la calibración falla, inspeccione los componentes del sistema de dosificación (bomba, inyector) y considere su reemplazo."
+    "suggestion": "Realice un procedimiento de calibración del sistema de dosificación de DEF utilizando una herramienta de diagnóstico. Si la calibración falla, inspeccione los componentes del sistema de dosificación (bomba, inyector) y considere su reemplazo.",
+    "model_part_id": "MOTOR"
   },
   "SPN:3719 FMI:15": {
     "description": "DPF Fallas Múltiples: Datos válidos pero por debajo del rango de operación normal - el nivel más bajo. Indica un problema grave con el sistema de post-tratamiento o DPF.",
     "link": "https://www.google.com/search?q=J1939+SPN+3719+FMI+15",
-    "suggestion": "Este código indica un fallo crítico en el sistema DPF. Requiere un diagnóstico exhaustivo por parte de un técnico especializado para identificar la causa raíz de las múltiples fallas y evitar daños permanentes al DPF o al motor."
+    "suggestion": "Este código indica un fallo crítico en el sistema DPF. Requiere un diagnóstico exhaustivo por parte de un técnico especializado para identificar la causa raíz de las múltiples fallas y evitar daños permanentes al DPF o al motor.",
+    "model_part_id": "MOTOR"
   },
   "SPN:4077 FMI:3": {
     "description": "Presión del Filtro de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Problema en el sensor o circuito de presión del filtro de aceite.",
     "link": "https://www.google.com/search?q=J1939+SPN+4077+FMI+3",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión del filtro de aceite para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Asegure una lectura precisa para monitorear el estado del filtro."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión del filtro de aceite para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Asegure una lectura precisa para monitorear el estado del filtro.",
+    "model_part_id": "MOTOR"
   },
   "SPN:4077 FMI:4": {
     "description": "Presión del Filtro de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Problema en el sensor o circuito de presión del filtro de aceite.",
     "link": "https://www.google.com/search?q=J1939+SPN+4077+FMI+4",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión del filtro de aceite para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Un filtro de aceite obstruido también podría activar este código."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de presión del filtro de aceite para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Un filtro de aceite obstruido también podría activar este código.",
+    "model_part_id": "MOTOR"
   },
   "SPN:4340 FMI:3": {
     "description": "Voltaje anormalmente alto o cortocircuito a fuente alta (Sensor de presión de entrada del turbo o Sensor de presión diferencial del DPF). La señal de voltaje del sensor es demasiado alta.",
     "link": "https://www.google.com/search?q=J1939+SPN+4340+FMI+3",
-    "suggestion": "Verifique el cableado y las conexiones del sensor al que se refiere este SPN (presión de entrada del turbo o DPF) en busca de cortocircuitos a la alimentación. Pruebe el sensor o reemplácelo si es necesario. Puede afectar el rendimiento del motor o del sistema de emisiones."
+    "suggestion": "Verifique el cableado y las conexiones del sensor al que se refiere este SPN (presión de entrada del turbo o DPF) en busca de cortocircuitos a la alimentación. Pruebe el sensor o reemplácelo si es necesario. Puede afectar el rendimiento del motor o del sistema de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:4765 FMI:0": {
     "description": "Sensor de NOx (Óxidos de Nitrógeno) Salida de Escape: Datos válidos pero por encima del rango de operación normal - más grave. Indica altos niveles de NOx, posiblemente por un problema en el sistema SCR o el motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+4765+FMI+0",
-    "suggestion": "Este código indica un problema grave con las emisiones de NOx. Revise el sistema SCR (catalizador, inyector de DEF, calidad de DEF). Verifique el sensor de NOx de salida. Puede requerir un diagnóstico profesional y reparación de componentes del sistema de emisiones."
+    "suggestion": "Este código indica un problema grave con las emisiones de NOx. Revise el sistema SCR (catalizador, inyector de DEF, calidad de DEF). Verifique el sensor de NOx de salida. Puede requerir un diagnóstico profesional y reparación de componentes del sistema de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:4765 FMI:1": {
     "description": "Sensor de NOx (Óxidos de Nitrógeno) Salida de Escape: Datos válidos pero por debajo del rango de operación normal - más grave.",
     "link": "https://www.google.com/search?q=J1939+SPN+4765+FMI+1",
-    "suggestion": "Verifique el sensor de NOx de salida y su cableado. Asegúrese de que el sensor esté recibiendo las señales correctas. Puede indicar un sensor defectuoso o un problema en el sistema de post-tratamiento que lleva a lecturas de NOx anormalmente bajas."
+    "suggestion": "Verifique el sensor de NOx de salida y su cableado. Asegúrese de que el sensor esté recibiendo las señales correctas. Puede indicar un sensor defectuoso o un problema en el sistema de post-tratamiento que lleva a lecturas de NOx anormalmente bajas.",
+    "model_part_id": "MOTOR"
   },
   "SPN:578 FMI:3": {
     "description": "Voltaje anormalmente alto o cortocircuito a fuente alta (Sensor de posición de la palanca de cambios o Palanca de control de transmisión). Problema eléctrico donde el sensor está recibiendo o enviando un voltaje excesivamente alto.",
     "link": "https://www.google.com/search?q=J1939+SPN+578+FMI+3",
-    "suggestion": "Inspeccione el cableado del sensor de posición de la palanca de cambios para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Puede afectar la selección de marchas y el comportamiento de la transmisión."
+    "suggestion": "Inspeccione el cableado del sensor de posición de la palanca de cambios para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Puede afectar la selección de marchas y el comportamiento de la transmisión.",
+    "model_part_id": "CABINA"
   },
   "SPN:16 FMI:4": {
     "description": "Voltaje anormalmente bajo o cortocircuito a fuente baja (Posición del acelerador o pedal del acelerador). Problema eléctrico en el circuito del sensor de posición del pedal.",
     "link": "https://www.google.com/search?q=J1939+SPN+16+FMI+4",
-    "suggestion": "Revise el cableado del sensor de posición del pedal del acelerador para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, el sensor de posición del pedal podría estar defectuoso y necesitar ser reemplazado. Esto afectará la respuesta del acelerador."
+    "suggestion": "Revise el cableado del sensor de posición del pedal del acelerador para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, el sensor de posición del pedal podría estar defectuoso y necesitar ser reemplazado. Esto afectará la respuesta del acelerador.",
+    "model_part_id": "CABINA"
   },
   "SPN:520211 FMI:18": {
     "description": "Problema del AdBlue o sistema SCR: Frecuencia de datos de calibración incorrecta. Específico del sistema de reducción catalítica selectiva (SCR) en motores Cummins.",
     "link": "https://quickserve.cummins.com/",
-    "suggestion": "Realice un procedimiento de calibración para el sistema AdBlue/SCR utilizando la herramienta de diagnóstico de Cummins. Si la calibración falla, revise el sensor de calibración y los componentes del sistema SCR."
+    "suggestion": "Realice un procedimiento de calibración para el sistema AdBlue/SCR utilizando la herramienta de diagnóstico de Cummins. Si la calibración falla, revise el sensor de calibración y los componentes del sistema SCR.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520211 FMI:31": {
     "description": "Problema del AdBlue o sistema SCR: Condición existe (No disponible, Condición no se puede determinar o fuera de rango). Código genérico Cummins relacionado con el sistema de post-tratamiento.",
     "link": "https://quickserve.cummins.com/",
-    "suggestion": "Este es un código genérico. Revise el nivel y la calidad del AdBlue/DEF. Inspeccione visualmente el sistema SCR (inyector, catalizador, sensores de NOx) en busca de daños u obstrucciones. Se requiere un diagnóstico más específico con la herramienta de diagnóstico Cummins."
+    "suggestion": "Este es un código genérico. Revise el nivel y la calidad del AdBlue/DEF. Inspeccione visualmente el sistema SCR (inyector, catalizador, sensores de NOx) en busca de daños u obstrucciones. Se requiere un diagnóstico más específico con la herramienta de diagnóstico Cummins.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520215 FMI:3": {
     "description": "Sensor de Nivel de Aceite del Motor: Voltaje por encima de lo normal o cortocircuito a alto. Puede resultar en una lectura incorrecta del nivel de aceite.",
     "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+3",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de nivel de aceite del motor para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Una lectura errónea puede llevar a un mantenimiento incorrecto del aceite."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de nivel de aceite del motor para cortocircuitos a la alimentación. Si el cableado está bien, reemplace el sensor. Una lectura errónea puede llevar a un mantenimiento incorrecto del aceite.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520215 FMI:4": {
     "description": "Sensor de Nivel de Aceite del Motor: Voltaje por debajo de lo normal o cortocircuito a bajo. Puede resultar en una lectura incorrecta del nivel de aceite.",
     "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+4",
-    "suggestion": "Inspeccione el cableado y las conexiones del sensor de nivel de aceite del motor para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Una lectura errónea puede llevar a un mantenimiento incorrecto del aceite."
+    "suggestion": "Inspeccione el cableado y las conexiones del sensor de nivel de aceite del motor para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor. Una lectura errónea puede llevar a un mantenimiento incorrecto del aceite.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520215 FMI:10": {
     "description": "Sensor de Nivel de Aceite del Motor: Velocidad de cambio anormal. El nivel de aceite no cambia como se espera o cambia erráticamente.",
     "link": "https://www.google.com/search?q=J1939+SPN+520215+FMI+10",
-    "suggestion": "Verifique el nivel de aceite del motor manualmente con la varilla. Si el nivel es correcto y estable, el sensor de nivel de aceite o su circuito podrían estar defectuosos. También podría indicar un problema de consumo o fugas de aceite."
+    "suggestion": "Verifique el nivel de aceite del motor manualmente con la varilla. Si el nivel es correcto y estable, el sensor de nivel de aceite o su circuito podrían estar defectuosos. También podría indicar un problema de consumo o fugas de aceite.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520216 FMI:0": {
     "description": "Presión de Aceite de Transmisión: Datos válidos pero por encima del rango de operación normal - más grave. Presión excesiva de aceite en la transmisión.",
@@ -347,7 +428,8 @@
   "SPN:520219 FMI:31": {
     "description": "Falla de Sistema de Frenos: Condición de falla presente. Problema en el sistema de frenos (ABS, EBS, etc.) que requiere atención inmediata.",
     "link": "https://www.google.com/search?q=J1939+SPN+520219+FMI+31",
-    "suggestion": "Estacione el vehículo de forma segura. Revise el nivel del líquido de frenos. Inspeccione visualmente las líneas de freno, pastillas y discos. Si hay luces de advertencia de ABS/EBS, puede indicar un sensor de rueda defectuoso o un módulo de control de frenos. Busque ayuda profesional."
+    "suggestion": "Estacione el vehículo de forma segura. Revise el nivel del líquido de frenos. Inspeccione visualmente las líneas de freno, pastillas y discos. Si hay luces de advertencia de ABS/EBS, puede indicar un sensor de rueda defectuoso o un módulo de control de frenos. Busque ayuda profesional.",
+    "model_part_id": "LLANTASDELANTERAS"
   },
   "SPN:520220 FMI:31": {
     "description": "Falla del Sistema de Dirección: Condición de falla presente. Problema en el sistema de dirección asistida o electrónica.",
@@ -362,57 +444,68 @@
   "SPN:520222 FMI:31": {
     "description": "Falla del Sistema de Luces: Condición de falla presente. Problema en el sistema de iluminación exterior del vehículo.",
     "link": "https://www.google.com/search?q=J1939+SPN+520222+FMI+31",
-    "suggestion": "Verifique todas las luces exteriores (faros, luces traseras, direccionales, luces de freno). Revise los fusibles y relés relacionados. Si hay un problema generalizado, puede indicar una falla en el módulo de control de la iluminación o en el cableado principal."
+    "suggestion": "Verifique todas las luces exteriores (faros, luces traseras, direccionales, luces de freno). Revise los fusibles y relés relacionados. Si hay un problema generalizado, puede indicar una falla en el módulo de control de la iluminación o en el cableado principal.",
+    "model_part_id": "CABINA"
   },
   "SPN:520223 FMI:31": {
     "description": "Falla de Sistema de Climatización (HVAC): Condición de falla presente. Problema en el aire acondicionado o calefacción de la cabina.",
     "link": "https://www.google.com/search?q=J1939+SPN+520223+FMI+31",
-    "suggestion": "Verifique los ajustes de HVAC. Inspeccione el compresor del A/C, el nivel de refrigerante, los ventiladores y los actuadores de las compuertas. Puede ser un problema eléctrico (fusible, relé) o mecánico (fuga de refrigerante)."
+    "suggestion": "Verifique los ajustes de HVAC. Inspeccione el compresor del A/C, el nivel de refrigerante, los ventiladores y los actuadores de las compuertas. Puede ser un problema eléctrico (fusible, relé) o mecánico (fuga de refrigerante).",
+    "model_part_id": "CABINA"
   },
   "SPN:520224 FMI:31": {
     "description": "Falla del Sistema de Seguridad: Condición de falla presente. Problema con el sistema de alarma, inmovilizador o bolsas de aire (si aplica).",
     "link": "https://www.google.com/search?q=J1939+SPN+520224+FMI+31",
-    "suggestion": "Para sistemas de seguridad, a menudo se requiere un diagnóstico especializado. Si se relaciona con bolsas de aire, evite la conducción. Para el inmovilizador/alarma, verifique la batería del control remoto o posibles interferencias."
+    "suggestion": "Para sistemas de seguridad, a menudo se requiere un diagnóstico especializado. Si se relaciona con bolsas de aire, evite la conducción. Para el inmovilizador/alarma, verifique la batería del control remoto o posibles interferencias.",
+    "model_part_id": "CABINA"
   },
   "SPN:520225 FMI:31": {
     "description": "Falla del Tren de Potencia: Condición de falla presente. Problema genérico en la cadena cinemática (motor, transmisión, ejes).",
     "link": "https://www.google.com/search?q=J1939+SPN+520225+FMI+31",
-    "suggestion": "Este es un código muy genérico que indica un problema en el tren de potencia. Requiere un diagnóstico completo del motor, la transmisión y los ejes para identificar la causa específica de la falla."
+    "suggestion": "Este es un código muy genérico que indica un problema en el tren de potencia. Requiere un diagnóstico completo del motor, la transmisión y los ejes para identificar la causa específica de la falla.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520226 FMI:31": {
     "description": "Falla del Sistema de Post-tratamiento de Escape: Condición de falla presente. Problema con los componentes del sistema de emisiones (DPF, SCR, sensores de NOx, etc.).",
     "link": "https://www.google.com/search?q=J1939+SPN+520226+FMI+31",
-    "suggestion": "Inspeccione visualmente todos los componentes del sistema de post-tratamiento. Verifique si hay fugas en el escape. Un diagnóstico con una herramienta de escaneo que pueda leer los datos de post-tratamiento es esencial para identificar el componente exacto."
+    "suggestion": "Inspeccione visualmente todos los componentes del sistema de post-tratamiento. Verifique si hay fugas en el escape. Un diagnóstico con una herramienta de escaneo que pueda leer los datos de post-tratamiento es esencial para identificar el componente exacto.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520227 FMI:31": {
     "description": "Falla del Sistema Eléctrico: Condición de falla presente. Problema en el sistema de carga, batería, alternador o cableado general.",
     "link": "https://www.google.com/search?q=J1939+SPN+520227+FMI+31",
-    "suggestion": "Revise la batería, las conexiones de la batería, el alternador y el regulador de voltaje. Verifique los fusibles principales y los relés. Inspeccione el cableado principal en busca de daños o corrosión. Un multímetro será útil para el diagnóstico."
+    "suggestion": "Revise la batería, las conexiones de la batería, el alternador y el regulador de voltaje. Verifique los fusibles principales y los relés. Inspeccione el cableado principal en busca de daños o corrosión. Un multímetro será útil para el diagnóstico.",
+    "model_part_id": "CABINA"
   },
   "SPN:520228 FMI:31": {
     "description": "Falla del Sistema de Control de Crucero: Condición de falla presente. Problema en la funcionalidad del control de crucero.",
     "link": "https://www.google.com/search?q=J1939+SPN+520228+FMI+31",
-    "suggestion": "Verifique los interruptores del control de crucero en el volante o tablero. Inspeccione el sensor de velocidad del vehículo y el interruptor de freno, ya que ambos son cruciales para el control de crucero. Puede requerir un diagnóstico electrónico para el módulo de control."
+    "suggestion": "Verifique los interruptores del control de crucero en el volante o tablero. Inspeccione el sensor de velocidad del vehículo y el interruptor de freno, ya que ambos son cruciales para el control de crucero. Puede requerir un diagnóstico electrónico para el módulo de control.",
+    "model_part_id": "CABINA"
   },
   "SPN:520229 FMI:31": {
     "description": "Falla del Sistema de Gestión del Motor: Condición de falla presente. Problema general en el ECM o sus funciones de control.",
     "link": "https://www.google.com/search?q=J1939+SPN+520229+FMI+31",
-    "suggestion": "Este es un código genérico y grave. Puede indicar un problema interno de la ECM, un problema de software/firmware, o una falla en múltiples sensores/actuadores que la ECM no puede procesar. Requiere un diagnóstico avanzado por parte de un técnico especializado."
+    "suggestion": "Este es un código genérico y grave. Puede indicar un problema interno de la ECM, un problema de software/firmware, o una falla en múltiples sensores/actuadores que la ECM no puede procesar. Requiere un diagnóstico avanzado por parte de un técnico especializado.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520230 FMI:31": {
     "description": "Falla del Sistema de Combustible: Condición de falla presente. Problema en el sistema de suministro de combustible (bomba, inyectores, filtros, etc.).",
     "link": "https://www.google.com/search?q=J1939+SPN+520230+FMI+31",
-    "suggestion": "Revise los filtros de combustible (primario y secundario) y reemplácelos si están obstruidos. Verifique la presión de la bomba de combustible. Inspeccione los inyectores y las líneas de combustible en busca de fugas o restricciones. Puede ser necesaria una prueba de retorno de combustible."
+    "suggestion": "Revise los filtros de combustible (primario y secundario) y reemplácelos si están obstruidos. Verifique la presión de la bomba de combustible. Inspeccione los inyectores y las líneas de combustible en busca de fugas o restricciones. Puede ser necesaria una prueba de retorno de combustible.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520231 FMI:31": {
     "description": "Falla del Sistema de Admisión de Aire: Condición de falla presente. Problema con el turbocargador, intercooler, filtro de aire o sensores relacionados.",
     "link": "https://www.google.com/search?q=J1939+SPN+520231+FMI+31",
-    "suggestion": "Inspeccione el filtro de aire en busca de obstrucciones. Verifique las mangueras del turbocargador y el intercooler en busca de fugas o grietas. Escuche si hay ruidos inusuales del turbo. Los sensores de presión/temperatura de admisión también deben ser revisados."
+    "suggestion": "Inspeccione el filtro de aire en busca de obstrucciones. Verifique las mangueras del turbocargador y el intercooler en busca de fugas o grietas. Escuche si hay ruidos inusuales del turbo. Los sensores de presión/temperatura de admisión también deben ser revisados.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520306 FMI:4": {
     "description": "Sensor de Presión de Combustible: Voltaje por debajo de lo normal o cortocircuito a bajo. Indica un problema con el sensor de presión de combustible que puede afectar el rendimiento del motor.",
     "link": "https://www.google.com/search?q=J1939+SPN+520306+FMI+4",
-    "suggestion": "Inspeccione el cableado del sensor de presión de combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de presión de combustible. Una lectura incorrecta afectará la entrega de combustible."
+    "suggestion": "Inspeccione el cableado del sensor de presión de combustible para cortocircuitos a tierra o circuitos abiertos. Si el cableado está bien, reemplace el sensor de presión de combustible. Una lectura incorrecta afectará la entrega de combustible.",
+    "model_part_id": "MOTOR"
   },
   "SPN:520740 FMI:12": {
     "description": "Dispositivo o componente defectuoso (Sistema de Detección de Fugas de Evaporación (EVAP)). Indica un fallo interno en un componente de este sistema.",
@@ -432,31 +525,37 @@
   "SPN:523318 FMI:7": {
     "description": "Falla del Sensor de Partículas (PM Sensor): Mal funcionamiento mecánico o fuera de calibración. Indica que el sensor de partículas que mide la concentración de hollín en el escape está defectuoso.",
     "link": "https://www.dtcdecode.com/SPN/523318-FMI-7",
-    "suggestion": "Inspeccione el sensor de partículas en el sistema de escape. Verifique si está sucio, dañado o si sus conexiones están comprometidas. Si el problema persiste, el sensor podría estar defectuoso y necesitar ser reemplazado para asegurar el monitoreo de emisiones."
+    "suggestion": "Inspeccione el sensor de partículas en el sistema de escape. Verifique si está sucio, dañado o si sus conexiones están comprometidas. Si el problema persiste, el sensor podría estar defectuoso y necesitar ser reemplazado para asegurar el monitoreo de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:523530 FMI:31": {
     "description": "Falla Genérica de Motor: Condición de falla presente. El módulo de control electrónico (ECM) ha detectado un problema.",
     "link": "https://www.google.com/search?q=J1939+SPN+523530+FMI+31",
-    "suggestion": "Este es un código muy genérico que indica un problema interno en el motor. Se requiere un diagnóstico completo del motor (presiones, temperaturas, sistemas de combustible/aire) y una herramienta de escaneo avanzada para identificar el subsistema específico afectado."
+    "suggestion": "Este es un código muy genérico que indica un problema interno en el motor. Se requiere un diagnóstico completo del motor (presiones, temperaturas, sistemas de combustible/aire) y una herramienta de escaneo avanzada para identificar el subsistema específico afectado.",
+    "model_part_id": "MOTOR"
   },
   "SPN:523531 FMI:31": {
     "description": "Sistema de Post-tratamiento de Escape: Condición de falla presente. Problema general en el sistema de emisiones, como SCR, DPF, o catalizador.",
-    "link": "https://www.google.com/search?q=J1939+SPN+523531+FMI+31",
-    "suggestion": "Realice un diagnóstico detallado de todos los componentes del sistema de post-tratamiento. Esto incluye verificar sensores de NOx, presión del DPF, temperaturas del escape, y el sistema de inyección de DEF. Es fundamental para cumplir con las regulaciones de emisiones."
+    "link": "https://www.google.com/search?q=J1939+SPN+523531+FMI:31",
+    "suggestion": "Realice un diagnóstico detallado de todos los componentes del sistema de post-tratamiento. Esto incluye verificar sensores de NOx, presión del DPF, temperaturas del escape, y el sistema de inyección de DEF. Es fundamental para cumplir con las regulaciones de emisiones.",
+    "model_part_id": "MOTOR"
   },
   "SPN:523543 FMI:31": {
     "description": "Sistema de Monitoreo de Reducción Catalítica Selectiva (SCR): Condición de falla presente. Problema en el sistema SCR que controla las emisiones de NOx.",
-    "link": "https://www.google.com/search?q=J1939+SPN+523543+FMI+31",
-    "suggestion": "Investigue el sistema SCR en profundidad. Verifique la calidad y el nivel de DEF, el funcionamiento del inyector de DEF, el catalizador SCR, y los sensores de NOx antes y después del SCR. Puede requerir pruebas de rendimiento del SCR."
+    "link": "https://www.google.com/search?q=J1939+SPN+523543+FMI:31",
+    "suggestion": "Investigue el sistema SCR en profundidad. Verifique la calidad y el nivel de DEF, el funcionamiento del inyector de DEF, el catalizador SCR, y los sensores de NOx antes y después del SCR. Puede requerir pruebas de rendimiento del SCR.",
+    "model_part_id": "MOTOR"
   },
   "SPN:523555 FMI:31": {
     "description": "Sistema de Dosificación de Reductor (DEF): Condición de falla presente. Problema en el sistema de inyección de urea (DEF) para el control de emisiones.",
     "link": "https://www.google.com/search?q=J1939+SPN+523555+FMI+31",
-    "suggestion": "Examine la bomba de DEF, el inyector de DEF y las líneas en busca de obstrucciones, fugas o daños. Asegúrese de que el DEF sea de la calidad correcta y el tanque no esté contaminado. Realice pruebas de funcionalidad del sistema de dosificación de DEF."
+    "suggestion": "Examine la bomba de DEF, el inyector de DEF y las líneas en busca de obstrucciones, fugas o daños. Asegúrese de que el DEF sea de la calidad correcta y el tanque no esté contaminado. Realice pruebas de funcionalidad del sistema de dosificación de DEF.",
+    "model_part_id": "MOTOR"
   },
   "SPN:5392 FMI:31": {
     "description": "Condición existe (Sensor de temperatura de los gases de escape (EGT) después del DOC). Problema con la señal o la funcionalidad del sensor de temperatura EGT.",
     "link": "https://www.google.com/search?q=J1939+SPN+5392+FMI+31",
-    "suggestion": "Verifique el sensor de temperatura de gases de escape después del DOC. Inspeccione su cableado para asegurar conexiones sólidas y sin daños. Si el problema persiste y el cableado es bueno, el sensor de EGT podría estar defectuoso y necesitar ser reemplazado."
+    "suggestion": "Verifique el sensor de temperatura de gases de escape después del DOC. Inspeccione su cableado para asegurar conexiones sólidas y sin daños. Si el problema persiste y el cableado es bueno, el sensor de EGT podría estar defectuoso y necesitar ser reemplazado.",
+    "model_part_id": "MOTOR"
   }
 }
